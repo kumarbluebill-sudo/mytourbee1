@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My TourBee — Luxury Travel Experiences | Domestic & International Tour Packages</title>
+    <meta name="description" content="My TourBee offers luxury domestic and international tour packages from Coimbatore. Explore Golden Triangle, Kerala, Goa, Rajasthan, Thailand, Bali, Europe & Dubai with detailed itineraries and best prices in INR.">
+    <meta name="keywords" content="tour packages, travel, domestic tours, international tours, Coimbatore travel agency, luxury travel, India tours, Thailand, Bali, Europe, Dubai">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <!-- ========== NAVIGATION ========== -->
+    <nav id="navbar" class="navbar">
+        <div class="nav-container">
+            <a href="#home" class="nav-logo">
+                <img src="images/logo.png" alt="My TourBee Logo" class="logo-img">
+            </a>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="#home" class="nav-link active">Home</a></li>
+                <li><a href="#domestic" class="nav-link">Domestic Tours</a></li>
+                <li><a href="#international" class="nav-link">International Tours</a></li>
+                <li><a href="#policy" class="nav-link">Cancellation Policy</a></li>
+                <li><a href="#about" class="nav-link">About Us</a></li>
+                <li><a href="#booking" class="nav-link nav-cta">Book Now</a></li>
+                <li><a href="#" class="nav-link nav-admin-btn" onclick="openAdminModal(); return false;">🔐 Admin Portal</a></li>
+            </ul>
+            <button class="hamburger" id="hamburger" aria-label="Toggle navigation menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- ========== HERO SECTION ========== -->
+    <section id="home" class="hero">
+        <div class="hero-bg">
+            <div class="hero-particles" id="heroParticles"></div>
+        </div>
+        <div class="hero-content">
+            <div class="hero-badge">✈ Luxury Travel Experiences</div>
+            <h1 class="hero-title">
+                Discover the World with
+                <span class="highlight">My TourBee</span>
+            </h1>
+            <p class="hero-subtitle">
+                Curated domestic & international tour packages with handpicked itineraries, 
+                premium stays, transparent payment policies, and unforgettable experiences — all at the best prices.
+            </p>
+            <div class="hero-cta">
+                <a href="#domestic" class="btn btn-primary">
+                    <span>🇮🇳</span> Domestic Tours
+                </a>
+                <a href="#international" class="btn btn-secondary">
+                    <span>🌍</span> International Tours
+                </a>
+            </div>
+            <div class="hero-stats">
+                <div class="stat">
+                    <span class="stat-number" data-target="15000">0</span><span class="stat-suffix">+</span>
+                    <span class="stat-label">Happy Travelers</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-number" data-target="50">0</span><span class="stat-suffix">+</span>
+                    <span class="stat-label">Destinations</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-number" data-target="15">0</span><span class="stat-suffix">+</span>
+                    <span class="stat-label">Years Experience</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-number" data-target="99">0</span><span class="stat-suffix">%</span>
+                    <span class="stat-label">Satisfaction Rate</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== DOMESTIC TOURS ========== -->
+    <section id="domestic" class="section tours-section">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-tag">🇮🇳 Explore India</span>
+                <h2 class="section-title">Domestic Tour Packages</h2>
+                <p class="section-desc">Discover the incredible diversity of India — from majestic forts and serene backwaters to golden beaches and royal heritage.</p>
+            </div>
+
+            <div class="tour-grid" id="domesticToursGrid">
+                <!-- Populated dynamically by JS -->
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== INTERNATIONAL TOURS ========== -->
+    <section id="international" class="section tours-section international-bg">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-tag">🌍 Explore the World</span>
+                <h2 class="section-title">International Tour Packages</h2>
+                <p class="section-desc">Jet off to exotic destinations across the globe — from tropical paradises and ancient temples to European charm and futuristic cities.</p>
+            </div>
+
+            <div class="tour-grid" id="internationalToursGrid">
+                <!-- Populated dynamically by JS -->
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== CANCELLATIONS & PAYMENT POLICY SECTION ========== -->
+    <section id="policy" class="section policy-section">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-tag">📜 Clear & Transparent Terms</span>
+                <h2 class="section-title">Payment & Cancellation Policy</h2>
+                <p class="section-desc">We believe in 100% transparency. Below are our official booking confirmation, payment timeline, and refund policy terms.</p>
+            </div>
+
+            <div class="policy-grid reveal">
+                <div class="policy-card">
+                    <div class="policy-icon">💳</div>
+                    <h3>25% Advance Payment</h3>
+                    <p>Required at the time of booking to reserve tour slots, hotels, and local ground arrangements.</p>
+                </div>
+                <div class="policy-card">
+                    <div class="policy-icon">🗓️</div>
+                    <h3>100% Payment at 15 Days</h3>
+                    <p>Full 100% balance payment is strictly required at least 15 days prior to your tour departure date.</p>
+                </div>
+                <div class="policy-card danger">
+                    <div class="policy-icon">🚫</div>
+                    <h3>7 Days Prior No Refunds</h3>
+                    <p>Cancellations made 7 days or less prior to departure date are strictly non-refundable (0% refund).</p>
+                </div>
+                <div class="policy-card info">
+                    <div class="policy-icon">✈️</div>
+                    <h3>Flight & Visa Actual Costings</h3>
+                    <p>Full 100% advance payment required upfront for actual flight ticket bookings and visa application processing fees.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== ABOUT SECTION ========== -->
+    <section id="about" class="section about-section">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-image reveal">
+                    <img src="images/logo.png" alt="My TourBee Travel Agency" style="width:100%; border-radius:16px; background:#1B2A4A; padding:40px;">
+                    <div class="about-badge-floating">
+                        <span class="icon">🏆</span>
+                        <div>
+                            <span class="title">Best Tour Operator</span>
+                            <span class="sub">Coimbatore Excellence Award</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-content reveal">
+                    <span class="section-tag">✈️ Who We Are</span>
+                    <h2 class="section-title">Your Trusted Travel Companion Since 2010</h2>
+                    <p>My TourBee is Coimbatore's premier luxury travel agency, crafting bespoke domestic and international tour packages. We believe travel should be seamless, inspiring, and unforgettable.</p>
+                    <p>Whether you're looking for a romantic honeymoon, a family vacation, a corporate getaway, or a solo adventure, our team of passionate travel experts handles every detail — from flight bookings and visas to luxury stays and curated daily itineraries.</p>
+
+                    <div class="features-grid">
+                        <div class="feature-box">
+                            <h4>🌟 Handpicked Stays</h4>
+                            <p>3-star, 4-star, & 5-star verified hotels with top ratings.</p>
+                        </div>
+                        <div class="feature-box">
+                            <h4>🗺️ Customized Trips</h4>
+                            <p>Itineraries tailored to your pace and preferences.</p>
+                        </div>
+                        <div class="feature-box">
+                            <h4>📞 24/7 Travel Support</h4>
+                            <p>Dedicated travel concierge throughout your journey.</p>
+                        </div>
+                        <div class="feature-box">
+                            <h4>💰 Best Price Guarantee</h4>
+                            <p>Unmatched value with complete price transparency.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== TESTIMONIALS SECTION ========== -->
+    <section class="section testimonials-section">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-tag">💬 Traveler Reviews</span>
+                <h2 class="section-title">What Our Guests Say</h2>
+                <p class="section-desc">Real stories from travelers who explored the world with My TourBee.</p>
+            </div>
+
+            <div class="testimonial-slider reveal">
+                <div class="testimonial-track" id="testimonialTrack">
+                    <div class="testimonial-card">
+                        <div class="testimonial-stars">⭐⭐⭐⭐⭐</div>
+                        <p class="testimonial-text">"The Bali trip exceeded all expectations! The rice terraces were breathtaking, temple visits spiritual, and private pool villa absolute luxury. TourBee delivers premium experiences."</p>
+                        <div class="testimonial-author">
+                            <div class="author-avatar">RK</div>
+                            <div>
+                                <span class="author-name">Rajesh & Kavitha</span>
+                                <span class="author-trip">Bali Paradise Tour — Coimbatore</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-card">
+                        <div class="testimonial-stars">⭐⭐⭐⭐⭐</div>
+                        <p class="testimonial-text">"Golden Triangle package was flawlessly organized. Driver was punctual, guides knowledgeable, Taj Mahal sunset mesmerizing. Best travel agency in Coimbatore!"</p>
+                        <div class="testimonial-author">
+                            <div class="author-avatar">SM</div>
+                            <div>
+                                <span class="author-name">Suresh Kumar</span>
+                                <span class="author-trip">Golden Triangle Tour — Coimbatore</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-card">
+                        <div class="testimonial-stars">⭐⭐⭐⭐⭐</div>
+                        <p class="testimonial-text">"Our Europe tour with My TourBee was smooth and hassle-free. Eiffel Tower, Swiss Alps Titlis snow, and Venice gondola ride were dreams come true. Highly recommended!"</p>
+                        <div class="testimonial-author">
+                            <div class="author-avatar">AP</div>
+                            <div>
+                                <span class="author-name">Anitha P.</span>
+                                <span class="author-trip">Europe Highlights — Coimbatore</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-controls">
+                    <button class="testimonial-btn prev" id="prevTestimonial" aria-label="Previous">❮</button>
+                    <div class="testimonial-dots" id="testimonialDots"></div>
+                    <button class="testimonial-btn next" id="nextTestimonial" aria-label="Next">❯</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== BOOKING FORM ========== -->
+    <section id="booking" class="section booking-section">
+        <div class="container">
+            <div class="booking-wrapper reveal">
+                <div class="booking-info">
+                    <span class="section-tag">📋 Book Your Trip</span>
+                    <h2 class="section-title">Ready for Your Next Adventure?</h2>
+                    <p>Fill out the form and our travel experts will contact you within 24 hours with a personalized quote.</p>
+                    <div class="booking-features">
+                        <div class="bf-item">
+                            <span class="bf-icon">✓</span>
+                            <span>25% Advance payment for instant booking confirmation</span>
+                        </div>
+                        <div class="bf-item">
+                            <span class="bf-icon">✓</span>
+                            <span>100% Payment required 15 days prior to departure</span>
+                        </div>
+                        <div class="bf-item">
+                            <span class="bf-icon">✓</span>
+                            <span>Transparent flight & visa actual costings</span>
+                        </div>
+                        <div class="bf-item">
+                            <span class="bf-icon">✓</span>
+                            <span>Customizable itineraries & travel dates</span>
+                        </div>
+                    </div>
+                </div>
+                <form id="bookingForm" class="booking-form" novalidate>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="fullName">Full Name *</label>
+                            <input type="text" id="fullName" name="fullName" placeholder="Enter your full name" required>
+                            <span class="form-error" id="fullNameError"></span>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email Address *</label>
+                            <input type="email" id="email" name="email" placeholder="your@email.com" required>
+                            <span class="form-error" id="emailError"></span>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="phone">Phone Number *</label>
+                            <input type="tel" id="phone" name="phone" placeholder="+91 XXXXX XXXXX" required>
+                            <span class="form-error" id="phoneError"></span>
+                        </div>
+                        <div class="form-group">
+                            <label for="tourPackage">Tour Package *</label>
+                            <select id="tourPackage" name="tourPackage" required>
+                                <option value="">Select a tour package</option>
+                                <!-- Populated dynamically by JS -->
+                            </select>
+                            <span class="form-error" id="tourPackageError"></span>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="travelDate">Preferred Travel Date *</label>
+                            <input type="date" id="travelDate" name="travelDate" required>
+                            <span class="form-error" id="travelDateError"></span>
+                        </div>
+                        <div class="form-group">
+                            <label for="adults">Number of Adults *</label>
+                            <select id="adults" name="adults" required>
+                                <option value="">Select</option>
+                                <option value="1">1 Adult</option>
+                                <option value="2" selected>2 Adults</option>
+                                <option value="3">3 Adults</option>
+                                <option value="4">4 Adults</option>
+                                <option value="5+">5+ Adults</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="specialReq">Special Requirements or Custom Requests</label>
+                        <textarea id="specialReq" name="specialReq" rows="3" placeholder="Dietary needs, room preferences, flight preferences, etc."></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary" id="submitBtn" style="width:100%;">
+                        Submit Booking Inquiry
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== CONTACT SECTION ========== -->
+    <section id="contact" class="section contact-section">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-tag">📍 Get in Touch</span>
+                <h2 class="section-title">Contact Us</h2>
+                <p class="section-desc">We'd love to hear from you! Visit our office or reach out through any of the channels below.</p>
+            </div>
+
+            <div class="contact-grid reveal">
+                <div class="contact-card">
+                    <div class="contact-icon">📍</div>
+                    <h3>Our Office</h3>
+                    <p>My TourBee Tours & Travels</p>
+                    <p>RS Puram, Coimbatore, Tamil Nadu — 641002</p>
+                </div>
+                <div class="contact-card">
+                    <div class="contact-icon">📞</div>
+                    <h3>Call Us</h3>
+                    <p><a href="tel:+919442294888">+91 94422 94888</a></p>
+                    <p><a href="tel:+919487007583">+91 94870 07583</a></p>
+                </div>
+                <div class="contact-card">
+                    <div class="contact-icon">✉️</div>
+                    <h3>Email Us</h3>
+                    <p><a href="mailto:mytourbee@gmail.com">mytourbee@gmail.com</a></p>
+                </div>
+                <div class="contact-card">
+                    <div class="contact-icon">🕐</div>
+                    <h3>Working Hours</h3>
+                    <p>Mon – Sat: 9:30 AM – 7:00 PM</p>
+                    <p>Sunday: 10:00 AM – 4:00 PM</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== FOOTER ========== -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <img src="images/logo.png" alt="My TourBee Logo" class="footer-logo-img">
+                    <p>Luxury Travel Experiences since 2010. Crafting memorable domestic & international journeys.</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#domestic">Domestic Tours</a></li>
+                        <li><a href="#international">International Tours</a></li>
+                        <li><a href="#policy">Cancellation Policy</a></li>
+                        <li><a href="#booking">Book Now</a></li>
+                        <li><a href="#" onclick="openAdminModal(); return false;">⚙️ Admin Login / CMS</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Top Destinations</h4>
+                    <ul>
+                        <li><a href="#domestic">Golden Triangle</a></li>
+                        <li><a href="#domestic">Kerala Backwaters</a></li>
+                        <li><a href="#international">Thailand Explorer</a></li>
+                        <li><a href="#international">Bali Paradise</a></li>
+                        <li><a href="#international">Europe Highlights</a></li>
+                        <li><a href="#international">Dubai & Abu Dhabi</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h4>Contact Info</h4>
+                    <p>📍 RS Puram, Coimbatore, Tamil Nadu</p>
+                    <p>📞 <a href="tel:+919442294888">+91 94422 94888</a></p>
+                    <p>📞 <a href="tel:+919487007583">+91 94870 07583</a></p>
+                    <p>✉️ <a href="mailto:mytourbee@gmail.com">mytourbee@gmail.com</a></p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2026 My TourBee Tours & Travels. All Rights Reserved.</p>
+                <div class="payment-methods">
+                    <span>We Accept:</span>
+                    <span class="payment-badge">UPI</span>
+                    <span class="payment-badge">Cards</span>
+                    <span class="payment-badge">Net Banking</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ========== ITINERARY MODAL ========== -->
+    <div class="modal-overlay" id="itineraryModal">
+        <div class="modal">
+            <button class="modal-close" id="modalClose" aria-label="Close itinerary modal">&times;</button>
+            <div class="modal-content" id="modalContent">
+                <!-- Filled dynamically by JS -->
+            </div>
+        </div>
+    </div>
+
+    <!-- ========== ADMIN CMS CONTROL PANEL MODAL ========== -->
+    <div class="modal-overlay" id="adminModal">
+        <div class="modal admin-modal">
+            <button class="modal-close" onclick="closeAdminModal()">&times;</button>
+            
+            <div class="admin-header">
+                <h2>🔐 Admin Control Panel — TourBee CMS</h2>
+                <div class="admin-actions">
+                    <button class="btn btn-primary btn-sm" onclick="openAddTourForm()">➕ Add New Tour</button>
+                    <button class="btn btn-secondary btn-sm" onclick="resetAdminDefaults()">🔄 Reset Defaults</button>
+                </div>
+            </div>
+
+            <!-- LIST VIEW -->
+            <div id="adminListView">
+                <p style="font-size:0.92rem; color:var(--text-secondary); margin-bottom:16px;">
+                    Edit tour pricing costings, departure dates, routes, itineraries, inclusions & exclusions. All updates save instantly and sync directly across the website!
+                </p>
+                <div class="admin-table-wrapper">
+                    <table class="admin-table">
+                        <thead>
+                            <tr>
+                                <th>Tour Title</th>
+                                <th>Category</th>
+                                <th>Price (Costing)</th>
+                                <th>Duration</th>
+                                <th>Departure Dates</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody id="adminTourTableBody">
+                            <!-- Populated dynamically by JS -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- FORM VIEW -->
+            <div id="adminFormView" style="display:none;">
+                <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:20px;">
+                    <h3 id="adminFormTitle" style="color:var(--primary); font-family:var(--font-heading);">✏️ Edit Tour</h3>
+                    <button class="btn btn-secondary btn-sm" onclick="cancelAdminEdit()">Back to List</button>
+                </div>
+
+                <input type="hidden" id="adminEditId">
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Tour Title *</label>
+                        <input type="text" id="adminTourTitle" placeholder="e.g. Golden Triangle Tour">
+                    </div>
+                    <div class="form-group">
+                        <label>Category *</label>
+                        <select id="adminCategory">
+                            <option value="domestic">🇮🇳 Domestic Tour</option>
+                            <option value="international">🌍 International Tour</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Price (Selling Costing) *</label>
+                        <input type="text" id="adminPrice" placeholder="e.g. ₹24,999">
+                    </div>
+                    <div class="form-group">
+                        <label>Original Price (Strike-through)</label>
+                        <input type="text" id="adminOriginalPrice" placeholder="e.g. ₹29,999">
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Price Details</label>
+                        <input type="text" id="adminPriceDetail" placeholder="Per person twin sharing | Child: ₹18,999">
+                    </div>
+                    <div class="form-group">
+                        <label>Duration *</label>
+                        <input type="text" id="adminDuration" placeholder="e.g. 6 Days / 5 Nights">
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Tour Route</label>
+                        <input type="text" id="adminRoute" placeholder="e.g. Delhi → Agra → Jaipur">
+                    </div>
+                    <div class="form-group">
+                        <label>Badge Tag</label>
+                        <input type="text" id="adminBadge" placeholder="e.g. Best Seller, Premium, Popular">
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Cover Image URL / Path</label>
+                        <input type="text" id="adminImage" placeholder="images/golden-triangle.jpg">
+                    </div>
+                    <div class="form-group">
+                        <label>Available Departure Dates</label>
+                        <input type="text" id="adminDates" placeholder="e.g. 15 Oct, 01 Nov, 15 Dec 2026">
+                    </div>
+                </div>
+
+                <div class="form-group" style="margin-bottom:16px;">
+                    <label>Overview Description</label>
+                    <textarea id="adminDesc" rows="2" placeholder="Brief summary of the tour package..."></textarea>
+                </div>
+
+                <div class="form-group" style="margin-bottom:16px;">
+                    <label>Key Highlights (comma-separated)</label>
+                    <input type="text" id="adminHighlights" placeholder="Taj Mahal, Amber Fort, Chokhi Dhani">
+                </div>
+
+                <div class="form-row" style="margin-bottom:16px;">
+                    <div class="form-group">
+                        <label>Inclusions (comma-separated)</label>
+                        <textarea id="adminInclusions" rows="3" placeholder="Hotel Stay, Daily Breakfast, AC Vehicle transfers"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label>Exclusions (comma-separated)</label>
+                        <textarea id="adminExclusions" rows="3" placeholder="Airfare, Personal Expenses, Tips"></textarea>
+                    </div>
+                </div>
+
+                <!-- ITINERARY DAYS BUILDER -->
+                <div style="border-top:1px solid var(--border); padding-top:20px; margin-top:20px;">
+                    <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:12px;">
+                        <h4 style="color:var(--primary); font-family:var(--font-heading);">🗓️ Day-by-Day Itinerary Builder</h4>
+                        <button type="button" class="btn btn-outline btn-sm" onclick="addDayToAdminForm()">➕ Add Day</button>
+                    </div>
+                    <div id="adminDaysContainer" class="admin-days-container">
+                        <!-- Dynamic Day Rows -->
+                    </div>
+                </div>
+
+                <div style="margin-top:24px; display:flex; gap:12px; justify-content:flex-end;">
+                    <button type="button" class="btn btn-secondary" onclick="cancelAdminEdit()">Cancel</button>
+                    <button type="button" class="btn btn-primary" onclick="saveAdminTour()">💾 Save Tour Changes</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ========== SUCCESS TOAST ========== -->
+    <div class="toast" id="successToast">
+        <div class="toast-icon">✅</div>
+        <div class="toast-body">
+            <h4>Success</h4>
+            <p>Operation completed successfully.</p>
+        </div>
+    </div>
+
+    <!-- ========== FLOATING BUTTONS ========== -->
+    <button class="admin-float-btn" onclick="openAdminModal()" title="Open Admin CMS">⚙️</button>
+    <a href="https://wa.me/919442294888?text=Hi%20My%20TourBee!%20I'm%20interested%20in%20a%20tour%20package." class="whatsapp-float" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
+        <svg viewBox="0 0 24 24" width="28" height="28" fill="#fff"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+    </a>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

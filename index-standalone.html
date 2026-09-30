@@ -1,0 +1,1683 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My TourBee — Luxury Travel Experiences | Domestic & International Tour Packages</title>
+    <meta name="description" content="My TourBee offers luxury domestic and international tour packages from Coimbatore. Explore Golden Triangle, Kerala, Goa, Rajasthan, Thailand, Bali, Europe & Dubai with detailed itineraries and best prices in INR.">
+    <meta name="keywords" content="tour packages, travel, domestic tours, international tours, Coimbatore travel agency, luxury travel, India tours, Thailand, Bali, Europe, Dubai">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+/* ============================================
+   MY TOURBEE — LUXURY TRAVEL EXPERIENCES
+   Premium Light Theme Stylesheet (Standalone)
+   ============================================ */
+
+:root {
+    --primary: #1B2A4A;          
+    --primary-light: #2A4066;
+    --primary-dark: #0F1A2E;
+    --accent: #D97706;           
+    --accent-hover: #B45309;
+    --accent-light: rgba(217, 119, 6, 0.12);
+
+    --bg-dark: #F8FAFC;          
+    --bg-card: #FFFFFF;          
+    --bg-card-hover: #F1F5F9;
+    --bg-glass: rgba(255, 255, 255, 0.95);
+    --bg-glass-border: rgba(27, 42, 74, 0.12);
+
+    --text-primary: #0F172A;     
+    --text-secondary: #475569;
+    --text-muted: #64748B;
+
+    --border: rgba(226, 232, 240, 0.9);
+    --radius-sm: 8px;
+    --radius: 16px;
+    --radius-lg: 24px;
+    --radius-xl: 32px;
+    --shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
+    --shadow-glow: 0 10px 25px rgba(217, 119, 6, 0.15);
+    --transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+
+    --font-heading: 'Outfit', sans-serif;
+    --font-body: 'Inter', sans-serif;
+}
+
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-top: 100px; }
+body { font-family: var(--font-body); background: var(--bg-dark); color: var(--text-primary); line-height: 1.7; overflow-x: hidden; }
+a { text-decoration: none; color: var(--primary); transition: var(--transition); }
+a:hover { color: var(--accent); }
+img { max-width: 100%; height: auto; display: block; }
+ul { list-style: none; }
+.container { max-width: 1280px; margin: 0 auto; padding: 0 24px; }
+.section { padding: 100px 0; }
+#preloader { display: none !important; }
+
+/* NAVBAR */
+.navbar { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; padding: 16px 0; transition: var(--transition); background: rgba(248, 250, 252, 0.9); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(226, 232, 240, 0.8); }
+.navbar.scrolled { background: rgba(255, 255, 255, 0.98); backdrop-filter: blur(20px); border-bottom: 2px solid var(--accent); padding: 10px 0; box-shadow: 0 4px 25px rgba(15, 23, 42, 0.08); }
+.nav-container { max-width: 1280px; margin: 0 auto; padding: 0 24px; display: flex; align-items: center; justify-content: space-between; }
+.nav-logo { display: flex; align-items: center; }
+.logo-img { height: 80px; width: auto; max-height: 90px; transition: var(--transition); filter: drop-shadow(0 2px 8px rgba(15, 23, 42, 0.12)); }
+.navbar.scrolled .logo-img { height: 65px; }
+.nav-menu { display: flex; align-items: center; gap: 8px; }
+.nav-link { color: var(--text-secondary); font-weight: 600; padding: 10px 18px; border-radius: var(--radius-sm); font-size: 0.95rem; transition: var(--transition); position: relative; }
+.nav-link:hover, .nav-link.active { color: var(--primary); }
+.nav-link::after { content: ''; position: absolute; bottom: 4px; left: 50%; transform: translateX(-50%) scaleX(0); width: 24px; height: 3px; background: var(--accent); border-radius: 2px; transition: transform 0.3s ease; }
+.nav-link:hover::after, .nav-link.active::after { transform: translateX(-50%) scaleX(1); }
+.nav-cta { background: var(--accent) !important; color: #FFFFFF !important; font-weight: 700 !important; border-radius: 50px !important; padding: 10px 24px !important; box-shadow: 0 4px 15px rgba(217, 119, 6, 0.3); }
+.nav-cta:hover { background: var(--accent-hover) !important; transform: translateY(-2px); box-shadow: 0 6px 20px rgba(217, 119, 6, 0.4); }
+.nav-cta::after { display: none; }
+.nav-admin-btn { background: var(--primary-light); color: #FFFFFF !important; border-radius: 50px; padding: 8px 18px !important; font-size: 0.88rem; display: flex; align-items: center; gap: 6px; }
+.nav-admin-btn:hover { background: var(--primary); transform: translateY(-2px); }
+.nav-admin-btn::after { display: none; }
+.hamburger { display: none; flex-direction: column; gap: 5px; background: none; border: none; cursor: pointer; padding: 8px; z-index: 1001; }
+.bar { width: 28px; height: 3px; background: var(--text-primary); border-radius: 4px; transition: var(--transition); }
+.hamburger.active .bar:nth-child(1) { transform: rotate(45deg) translate(6px, 5px); }
+.hamburger.active .bar:nth-child(2) { opacity: 0; }
+.hamburger.active .bar:nth-child(3) { transform: rotate(-45deg) translate(6px, -5px); }
+
+/* HERO */
+.hero { position: relative; min-height: 90vh; display: flex; align-items: center; justify-content: center; overflow: hidden; padding: 140px 24px 80px; }
+.hero-bg { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: radial-gradient(ellipse at 20% 40%, rgba(27, 42, 74, 0.06) 0%, transparent 60%), radial-gradient(ellipse at 80% 20%, rgba(217, 119, 6, 0.08) 0%, transparent 50%), linear-gradient(135deg, #F8FAFC 0%, #EFF6FF 50%, #F1F5F9 100%); z-index: 0; }
+.hero-particles { position: absolute; width: 100%; height: 100%; overflow: hidden; }
+.particle { position: absolute; width: 4px; height: 4px; background: var(--accent); border-radius: 50%; opacity: 0; animation: particleFloat 8s ease-in-out infinite; }
+@keyframes particleFloat { 0% { opacity: 0; transform: translateY(100vh) scale(0); } 10% { opacity: 0.7; } 90% { opacity: 0.7; } 100% { opacity: 0; transform: translateY(-10vh) scale(1); } }
+.hero-content { position: relative; z-index: 1; text-align: center; max-width: 900px; }
+.hero-badge { display: inline-block; padding: 8px 24px; background: rgba(217, 119, 6, 0.12); border: 1px solid rgba(217, 119, 6, 0.3); border-radius: 50px; font-size: 0.9rem; font-weight: 700; color: var(--accent); margin-bottom: 24px; letter-spacing: 1px; }
+.hero-title { font-family: var(--font-heading); font-size: clamp(2.5rem, 6vw, 4.2rem); font-weight: 800; line-height: 1.15; margin-bottom: 24px; color: var(--primary); }
+.hero-title .highlight { background: linear-gradient(135deg, var(--primary), var(--accent)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+.hero-subtitle { font-size: clamp(1rem, 2vw, 1.25rem); color: var(--text-secondary); max-width: 680px; margin: 0 auto 40px; font-weight: 400; }
+.hero-cta { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+.btn { display: inline-flex; align-items: center; justify-content: center; gap: 10px; padding: 14px 32px; border-radius: 50px; font-weight: 700; font-size: 1rem; transition: var(--transition); cursor: pointer; border: none; outline: none; }
+.btn-primary { background: linear-gradient(135deg, var(--primary), var(--primary-light)); color: #FFFFFF; box-shadow: 0 8px 25px rgba(27, 42, 74, 0.25); }
+.btn-primary:hover { transform: translateY(-3px); box-shadow: 0 12px 30px rgba(27, 42, 74, 0.35); color: #FFFFFF; }
+.btn-secondary { background: var(--bg-card); color: var(--primary); border: 2px solid var(--primary); box-shadow: var(--shadow); }
+.btn-secondary:hover { background: var(--primary); color: #FFFFFF; transform: translateY(-3px); }
+.btn-outline { background: transparent; border: 2px solid var(--primary); color: var(--primary); }
+.btn-outline:hover { background: var(--primary); color: #FFFFFF; }
+.btn-sm { padding: 10px 20px; font-size: 0.9rem; }
+.hero-stats { display: flex; justify-content: center; gap: 48px; margin-top: 60px; padding-top: 40px; border-top: 1px solid var(--border); }
+.stat { text-align: center; }
+.stat-number, .stat-suffix { font-family: var(--font-heading); font-size: 2.4rem; font-weight: 800; color: var(--primary); }
+.stat-label { display: block; font-size: 0.9rem; color: var(--text-secondary); margin-top: 4px; font-weight: 500; }
+
+/* SECTIONS & CARDS */
+.section-header { text-align: center; max-width: 750px; margin: 0 auto 60px; }
+.section-tag { display: inline-block; padding: 6px 18px; background: rgba(27, 42, 74, 0.08); border: 1px solid rgba(27, 42, 74, 0.15); border-radius: 50px; font-size: 0.85rem; font-weight: 700; color: var(--primary); margin-bottom: 16px; text-transform: uppercase; letter-spacing: 1px; }
+.section-title { font-family: var(--font-heading); font-size: clamp(2rem, 4vw, 3rem); font-weight: 800; color: var(--primary); margin-bottom: 16px; line-height: 1.2; }
+.section-desc { font-size: 1.1rem; color: var(--text-secondary); }
+.tour-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(350px, 1fr)); gap: 32px; }
+.tour-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow); transition: var(--transition); display: flex; flex-direction: column; }
+.tour-card:hover { transform: translateY(-8px); box-shadow: 0 20px 40px rgba(15, 23, 42, 0.12); border-color: rgba(217, 119, 6, 0.4); }
+.tour-card-image { position: relative; height: 240px; overflow: hidden; }
+.tour-card-image img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.6s ease; }
+.tour-card:hover .tour-card-image img { transform: scale(1.08); }
+.tour-badge { position: absolute; top: 16px; left: 16px; padding: 6px 14px; background: var(--primary); color: #FFFFFF; font-size: 0.8rem; font-weight: 700; border-radius: 50px; box-shadow: 0 4px 10px rgba(0,0,0,0.15); }
+.tour-badge.popular { background: #059669; }
+.tour-badge.trending { background: #7C3AED; }
+.tour-badge.premium { background: var(--accent); color: #FFFFFF; }
+.tour-price { position: absolute; bottom: 16px; right: 16px; background: rgba(15, 23, 42, 0.85); backdrop-filter: blur(10px); padding: 6px 16px; border-radius: 50px; color: #F7C948; font-family: var(--font-heading); font-weight: 800; font-size: 1.2rem; border: 1px solid rgba(255, 255, 255, 0.2); }
+.tour-price span { font-size: 0.75rem; font-weight: 400; color: #E2E8F0; }
+.tour-card-body { padding: 24px; display: flex; flex-direction: column; flex-grow: 1; }
+.tour-meta { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; font-size: 0.85rem; color: var(--text-muted); }
+.tour-duration { font-weight: 600; color: var(--primary); }
+.tour-rating { font-weight: 700; color: #D97706; }
+.tour-name { font-family: var(--font-heading); font-size: 1.35rem; font-weight: 700; color: var(--text-primary); margin-bottom: 8px; }
+.tour-route { font-size: 0.9rem; color: var(--accent); font-weight: 600; margin-bottom: 12px; }
+.tour-desc { font-size: 0.92rem; color: var(--text-secondary); margin-bottom: 16px; line-height: 1.6; }
+.tour-dates { margin-bottom: 16px; font-size: 0.85rem; background: rgba(241, 245, 249, 0.8); padding: 8px 12px; border-radius: var(--radius-sm); color: var(--primary); font-weight: 600; }
+.tour-highlights { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 24px; margin-top: auto; }
+.tag { background: #F1F5F9; color: var(--text-secondary); font-size: 0.78rem; padding: 4px 10px; border-radius: 4px; font-weight: 500; }
+.tour-actions { display: flex; gap: 12px; }
+.tour-actions .btn { flex: 1; }
+.international-bg { background: #F1F5F9; }
+
+/* POLICY SECTION */
+.policy-section { background: #FFFFFF; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+.policy-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 24px; }
+.policy-card { background: var(--bg-dark); padding: 30px 24px; border-radius: var(--radius); border: 1px solid var(--border); transition: var(--transition); text-align: center; }
+.policy-card:hover { transform: translateY(-50%); box-shadow: var(--shadow); border-color: var(--primary); }
+.policy-icon { font-size: 2.8rem; margin-bottom: 16px; }
+.policy-card h3 { font-family: var(--font-heading); font-size: 1.2rem; font-weight: 700; color: var(--primary); margin-bottom: 10px; }
+.policy-card p { font-size: 0.92rem; color: var(--text-secondary); line-height: 1.6; }
+.policy-card.danger { border-left: 4px solid #DC2626; }
+.policy-card.danger h3 { color: #DC2626; }
+.policy-card.info { border-left: 4px solid #2563EB; }
+
+/* ABOUT & TESTIMONIALS */
+.about-section { background: var(--bg-dark); }
+.about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
+.about-image { position: relative; border-radius: var(--radius-lg); overflow: hidden; box-shadow: var(--shadow); }
+.about-badge-floating { position: absolute; bottom: 24px; right: 24px; background: #FFFFFF; padding: 16px 24px; border-radius: var(--radius); box-shadow: 0 10px 30px rgba(0,0,0,0.15); display: flex; align-items: center; gap: 14px; }
+.about-badge-floating .icon { font-size: 2rem; }
+.about-badge-floating .title { font-weight: 800; color: var(--primary); display: block; }
+.about-badge-floating .sub { font-size: 0.85rem; color: var(--text-secondary); }
+.features-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 30px; }
+.feature-box { background: #FFFFFF; padding: 20px; border-radius: var(--radius-sm); border: 1px solid var(--border); }
+.feature-box h4 { color: var(--primary); font-weight: 700; margin-bottom: 6px; }
+.feature-box p { font-size: 0.88rem; color: var(--text-secondary); }
+
+.testimonials-section { background: #F1F5F9; }
+.testimonial-slider { position: relative; max-width: 850px; margin: 0 auto; overflow: hidden; }
+.testimonial-track { display: flex; transition: transform 0.5s ease-in-out; }
+.testimonial-card { min-width: 100%; padding: 40px; background: #FFFFFF; border-radius: var(--radius-lg); border: 1px solid var(--border); box-shadow: var(--shadow); box-sizing: border-box; }
+.testimonial-stars { font-size: 1.3rem; color: #F59E0B; margin-bottom: 16px; }
+.testimonial-text { font-size: 1.1rem; font-style: italic; color: var(--text-primary); margin-bottom: 24px; line-height: 1.8; }
+.testimonial-author { display: flex; align-items: center; gap: 16px; }
+.author-avatar { width: 50px; height: 50px; border-radius: 50%; background: var(--primary); color: #FFFFFF; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 1.2rem; }
+.author-name { font-weight: 700; color: var(--primary); }
+.author-trip { font-size: 0.85rem; color: var(--text-muted); }
+.testimonial-controls { display: flex; align-items: center; justify-content: center; gap: 20px; margin-top: 30px; }
+.testimonial-btn { background: #FFFFFF; border: 1px solid var(--border); width: 44px; height: 44px; border-radius: 50%; cursor: pointer; font-size: 1.2rem; color: var(--primary); transition: var(--transition); }
+.testimonial-btn:hover { background: var(--primary); color: #FFFFFF; }
+.testimonial-dots { display: flex; gap: 8px; }
+.testimonial-dot { width: 12px; height: 12px; border-radius: 50%; background: #CBD5E1; cursor: pointer; transition: var(--transition); }
+.testimonial-dot.active { background: var(--primary); width: 28px; border-radius: 10px; }
+
+/* BOOKING & FOOTER */
+.booking-section { background: var(--bg-dark); }
+.booking-wrapper { display: grid; grid-template-columns: 1fr 1.3fr; gap: 48px; background: #FFFFFF; border-radius: var(--radius-xl); padding: 48px; box-shadow: var(--shadow); border: 1px solid var(--border); }
+.booking-info h2 { color: var(--primary); font-family: var(--font-heading); font-size: 2.2rem; font-weight: 800; margin-bottom: 16px; }
+.booking-info p { color: var(--text-secondary); margin-bottom: 30px; }
+.booking-features { display: flex; flex-direction: column; gap: 16px; }
+.bf-item { display: flex; align-items: center; gap: 12px; font-weight: 600; color: var(--primary); font-size: 0.95rem; }
+.bf-icon { width: 26px; height: 26px; border-radius: 50%; background: rgba(217, 119, 6, 0.15); color: var(--accent); display: flex; align-items: center; justify-content: center; font-size: 0.85rem; font-weight: 800; }
+.booking-form { display: flex; flex-direction: column; gap: 20px; }
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+.form-group { display: flex; flex-direction: column; gap: 8px; }
+.form-group label { font-size: 0.9rem; font-weight: 600; color: var(--primary); }
+.form-group input, .form-group select, .form-group textarea { width: 100%; padding: 12px 16px; border: 1px solid var(--border); border-radius: var(--radius-sm); background: #F8FAFC; color: var(--text-primary); font-family: var(--font-body); font-size: 0.95rem; transition: var(--transition); }
+.form-group input:focus, .form-group select:focus, .form-group textarea:focus { outline: none; border-color: var(--primary); background: #FFFFFF; box-shadow: 0 0 0 3px rgba(27, 42, 74, 0.1); }
+.form-error { color: #DC2626; font-size: 0.8rem; }
+
+.footer { background: #0F1A2E; color: #94A3B8; padding: 80px 0 30px; }
+.footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1.5fr; gap: 40px; margin-bottom: 60px; }
+.footer-logo-img { height: 95px; width: auto; margin-bottom: 20px; filter: brightness(0) invert(1); }
+.footer-about p { font-size: 0.95rem; line-height: 1.7; }
+.footer-links h4, .footer-contact h4 { color: #FFFFFF; font-family: var(--font-heading); font-size: 1.2rem; margin-bottom: 20px; }
+.footer-links ul li { margin-bottom: 10px; }
+.footer-links a { color: #94A3B8; font-size: 0.95rem; }
+.footer-links a:hover { color: var(--accent); }
+.footer-contact p { margin-bottom: 12px; font-size: 0.95rem; }
+.footer-contact a { color: #94A3B8; }
+.footer-contact a:hover { color: var(--accent); }
+.footer-bottom { display: flex; justify-content: space-between; align-items: center; padding-top: 30px; border-top: 1px solid rgba(255, 255, 255, 0.1); font-size: 0.9rem; }
+.payment-methods { display: flex; align-items: center; gap: 8px; }
+.payment-badge { background: rgba(255, 255, 255, 0.1); color: #FFFFFF; padding: 4px 10px; border-radius: 4px; font-size: 0.8rem; }
+
+/* MODALS & ADMIN */
+.modal-overlay { position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(15, 23, 42, 0.7); backdrop-filter: blur(8px); z-index: 2000; display: flex; align-items: center; justify-content: center; padding: 24px; opacity: 0; visibility: hidden; transition: var(--transition); }
+.modal-overlay.active { opacity: 1; visibility: visible; }
+.modal { background: #FFFFFF; width: 100%; max-width: 900px; max-height: 90vh; border-radius: var(--radius-lg); box-shadow: 0 25px 50px rgba(0,0,0,0.25); overflow-y: auto; position: relative; padding: 36px; }
+.modal-close { position: absolute; top: 20px; right: 20px; background: #F1F5F9; border: none; width: 40px; height: 40px; border-radius: 50%; font-size: 1.5rem; cursor: pointer; color: var(--primary); display: flex; align-items: center; justify-content: center; transition: var(--transition); }
+.modal-close:hover { background: var(--primary); color: #FFFFFF; }
+.modal-price-bar { background: rgba(27, 42, 74, 0.05); border: 1px solid var(--border); padding: 16px 20px; border-radius: var(--radius-sm); margin: 20px 0; display: flex; justify-content: space-between; align-items: center; }
+.price-main { font-family: var(--font-heading); font-size: 1.5rem; font-weight: 800; color: var(--primary); }
+.price-detail { font-size: 0.9rem; color: var(--text-secondary); }
+.itinerary-day { background: #F8FAFC; border: 1px solid var(--border); padding: 18px; border-radius: var(--radius-sm); margin-bottom: 14px; }
+.itinerary-day h4 { color: var(--primary); font-family: var(--font-heading); font-size: 1.1rem; margin-bottom: 8px; }
+.itinerary-day p { font-size: 0.93rem; color: var(--text-secondary); margin-bottom: 8px; }
+.itinerary-day .meals { font-size: 0.85rem; font-weight: 600; color: var(--accent); }
+.incl-excl { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 24px; }
+.inclusions h4 { color: #059669; margin-bottom: 12px; }
+.exclusions h4 { color: #DC2626; margin-bottom: 12px; }
+.inclusions ul li, .exclusions ul li { font-size: 0.9rem; margin-bottom: 6px; padding-left: 20px; position: relative; color: var(--text-secondary); }
+.inclusions ul li::before { content: '✓'; position: absolute; left: 0; color: #059669; font-weight: 800; }
+.exclusions ul li::before { content: '✕'; position: absolute; left: 0; color: #DC2626; font-weight: 800; }
+.modal-policy-box { background: #FEF3C7; border: 1px solid #F59E0B; padding: 16px 20px; border-radius: var(--radius-sm); margin-top: 24px; }
+.modal-policy-box h4 { color: #B45309; margin-bottom: 8px; font-size: 1rem; }
+.modal-policy-box ul { list-style: disc; padding-left: 20px; font-size: 0.88rem; color: #78350F; }
+
+.admin-modal { max-width: 1100px; }
+.admin-header { display: flex; justify-content: space-between; align-items: center; border-bottom: 2px solid var(--border); padding-bottom: 20px; margin-bottom: 24px; }
+.admin-header h2 { font-family: var(--font-heading); color: var(--primary); font-size: 1.8rem; display: flex; align-items: center; gap: 10px; }
+.admin-actions { display: flex; gap: 12px; }
+.admin-table-wrapper { overflow-x: auto; }
+.admin-table { width: 100%; border-collapse: collapse; margin-top: 16px; }
+.admin-table th, .admin-table td { padding: 14px 16px; text-align: left; border-bottom: 1px solid var(--border); font-size: 0.92rem; }
+.admin-table th { background: #F1F5F9; color: var(--primary); font-weight: 700; }
+.admin-table tr:hover { background: #F8FAFC; }
+.admin-badge { padding: 4px 10px; border-radius: 50px; font-size: 0.78rem; font-weight: 700; }
+.admin-badge.dom { background: #DBEAFE; color: #1E40AF; }
+.admin-badge.int { background: #FCE7F3; color: #9D174D; }
+.action-btns { display: flex; gap: 8px; }
+.btn-edit { background: #2563EB; color: #FFF; border: none; padding: 6px 14px; border-radius: 6px; cursor: pointer; font-weight: 600; font-size: 0.85rem; }
+.btn-edit:hover { background: #1D4ED8; }
+.btn-delete { background: #DC2626; color: #FFF; border: none; padding: 6px 14px; border-radius: 6px; cursor: pointer; font-weight: 600; font-size: 0.85rem; }
+.btn-delete:hover { background: #B91C1C; }
+.admin-days-container { display: flex; flex-direction: column; gap: 16px; margin-top: 10px; }
+.admin-day-row { background: #F8FAFC; border: 1px solid var(--border); border-radius: var(--radius-sm); padding: 16px; position: relative; }
+.admin-day-row .btn-remove-day { position: absolute; top: 12px; right: 12px; background: #FEE2E2; color: #DC2626; border: none; padding: 4px 10px; border-radius: 4px; cursor: pointer; font-weight: 700; font-size: 0.8rem; }
+.admin-float-btn { position: fixed; bottom: 30px; left: 30px; background: var(--primary); color: #FFFFFF; width: 50px; height: 50px; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 8px 25px rgba(15, 23, 42, 0.3); z-index: 999; cursor: pointer; font-size: 1.3rem; transition: var(--transition); border: 2px solid var(--accent); }
+.admin-float-btn:hover { transform: scale(1.1) rotate(45deg); background: var(--accent); color: var(--primary); }
+
+.toast { position: fixed; bottom: 30px; right: 30px; background: #FFFFFF; border: 1px solid var(--border); box-shadow: 0 15px 35px rgba(0,0,0,0.15); padding: 16px 24px; border-radius: var(--radius); display: flex; align-items: center; gap: 16px; z-index: 3000; transform: translateY(100px); opacity: 0; transition: var(--transition); }
+.toast.show { transform: translateY(0); opacity: 1; }
+.whatsapp-float { position: fixed; bottom: 30px; right: 30px; background: #25D366; width: 56px; height: 56px; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 8px 25px rgba(37, 211, 102, 0.4); z-index: 999; transition: var(--transition); }
+
+@media (max-width: 992px) { .hero-title { font-size: 3rem; } .about-grid, .booking-wrapper { grid-template-columns: 1fr; } .footer-grid { grid-template-columns: 1fr 1fr; } .tour-grid { grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); } }
+@media (max-width: 768px) { .hamburger { display: flex; } .nav-menu { position: fixed; top: 0; right: -100%; width: 80%; max-width: 320px; height: 100vh; background: #FFFFFF; flex-direction: column; justify-content: center; gap: 20px; transition: 0.4s ease; box-shadow: -10px 0 30px rgba(0,0,0,0.1); } .nav-menu.active { right: 0; } .form-row, .incl-excl { grid-template-columns: 1fr; } .footer-grid { grid-template-columns: 1fr; } .footer-bottom { flex-direction: column; gap: 16px; text-align: center; } .logo-img { height: 60px; } }
+    </style>
+</head>
+<body>
+
+    <!-- ========== NAVIGATION ========== -->
+    <nav id="navbar" class="navbar">
+        <div class="nav-container">
+            <a href="#home" class="nav-logo">
+                <img src="images/logo.png" alt="My TourBee Logo" class="logo-img">
+            </a>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="#home" class="nav-link active">Home</a></li>
+                <li><a href="#domestic" class="nav-link">Domestic Tours</a></li>
+                <li><a href="#international" class="nav-link">International Tours</a></li>
+                <li><a href="#policy" class="nav-link">Cancellation Policy</a></li>
+                <li><a href="#about" class="nav-link">About Us</a></li>
+                <li><a href="#booking" class="nav-link nav-cta">Book Now</a></li>
+                <li><a href="#" class="nav-link nav-admin-btn" onclick="openAdminModal(); return false;">🔐 Admin Portal</a></li>
+            </ul>
+            <button class="hamburger" id="hamburger" aria-label="Toggle navigation menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- ========== HERO SECTION ========== -->
+    <section id="home" class="hero">
+        <div class="hero-bg">
+            <div class="hero-particles" id="heroParticles"></div>
+        </div>
+        <div class="hero-content">
+            <div class="hero-badge">✈ Luxury Travel Experiences</div>
+            <h1 class="hero-title">
+                Discover the World with
+                <span class="highlight">My TourBee</span>
+            </h1>
+            <p class="hero-subtitle">
+                Curated domestic & international tour packages with handpicked itineraries, 
+                premium stays, transparent payment policies, and unforgettable experiences — all at the best prices.
+            </p>
+            <div class="hero-cta">
+                <a href="#domestic" class="btn btn-primary">
+                    <span>🇮🇳</span> Domestic Tours
+                </a>
+                <a href="#international" class="btn btn-secondary">
+                    <span>🌍</span> International Tours
+                </a>
+            </div>
+            <div class="hero-stats">
+                <div class="stat">
+                    <span class="stat-number" data-target="15000">0</span><span class="stat-suffix">+</span>
+                    <span class="stat-label">Happy Travelers</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-number" data-target="50">0</span><span class="stat-suffix">+</span>
+                    <span class="stat-label">Destinations</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-number" data-target="15">0</span><span class="stat-suffix">+</span>
+                    <span class="stat-label">Years Experience</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-number" data-target="99">0</span><span class="stat-suffix">%</span>
+                    <span class="stat-label">Satisfaction Rate</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== DOMESTIC TOURS ========== -->
+    <section id="domestic" class="section tours-section">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-tag">🇮🇳 Explore India</span>
+                <h2 class="section-title">Domestic Tour Packages</h2>
+                <p class="section-desc">Discover the incredible diversity of India — from majestic forts and serene backwaters to golden beaches and royal heritage.</p>
+            </div>
+
+            <div class="tour-grid" id="domesticToursGrid">
+                <!-- Populated dynamically by JS -->
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== INTERNATIONAL TOURS ========== -->
+    <section id="international" class="section tours-section international-bg">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-tag">🌍 Explore the World</span>
+                <h2 class="section-title">International Tour Packages</h2>
+                <p class="section-desc">Jet off to exotic destinations across the globe — from tropical paradises and ancient temples to European charm and futuristic cities.</p>
+            </div>
+
+            <div class="tour-grid" id="internationalToursGrid">
+                <!-- Populated dynamically by JS -->
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== CANCELLATIONS & PAYMENT POLICY SECTION ========== -->
+    <section id="policy" class="section policy-section">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-tag">📜 Clear & Transparent Terms</span>
+                <h2 class="section-title">Payment & Cancellation Policy</h2>
+                <p class="section-desc">We believe in 100% transparency. Below are our official booking confirmation, payment timeline, and refund policy terms.</p>
+            </div>
+
+            <div class="policy-grid reveal">
+                <div class="policy-card">
+                    <div class="policy-icon">💳</div>
+                    <h3>25% Advance Payment</h3>
+                    <p>Required at the time of booking to reserve tour slots, hotels, and local ground arrangements.</p>
+                </div>
+                <div class="policy-card">
+                    <div class="policy-icon">🗓️</div>
+                    <h3>100% Payment at 15 Days</h3>
+                    <p>Full 100% balance payment is strictly required at least 15 days prior to your tour departure date.</p>
+                </div>
+                <div class="policy-card danger">
+                    <div class="policy-icon">🚫</div>
+                    <h3>7 Days Prior No Refunds</h3>
+                    <p>Cancellations made 7 days or less prior to departure date are strictly non-refundable (0% refund).</p>
+                </div>
+                <div class="policy-card info">
+                    <div class="policy-icon">✈️</div>
+                    <h3>Flight & Visa Actual Costings</h3>
+                    <p>Full 100% advance payment required upfront for actual flight ticket bookings and visa application processing fees.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== ABOUT SECTION ========== -->
+    <section id="about" class="section about-section">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-image reveal">
+                    <img src="images/logo.png" alt="My TourBee Travel Agency" style="width:100%; border-radius:16px; background:#1B2A4A; padding:40px;">
+                    <div class="about-badge-floating">
+                        <span class="icon">🏆</span>
+                        <div>
+                            <span class="title">Best Tour Operator</span>
+                            <span class="sub">Coimbatore Excellence Award</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-content reveal">
+                    <span class="section-tag">✈️ Who We Are</span>
+                    <h2 class="section-title">Your Trusted Travel Companion Since 2010</h2>
+                    <p>My TourBee is Coimbatore's premier luxury travel agency, crafting bespoke domestic and international tour packages. We believe travel should be seamless, inspiring, and unforgettable.</p>
+                    <p>Whether you're looking for a romantic honeymoon, a family vacation, a corporate getaway, or a solo adventure, our team of passionate travel experts handles every detail — from flight bookings and visas to luxury stays and curated daily itineraries.</p>
+
+                    <div class="features-grid">
+                        <div class="feature-box">
+                            <h4>🌟 Handpicked Stays</h4>
+                            <p>3-star, 4-star, & 5-star verified hotels with top ratings.</p>
+                        </div>
+                        <div class="feature-box">
+                            <h4>🗺️ Customized Trips</h4>
+                            <p>Itineraries tailored to your pace and preferences.</p>
+                        </div>
+                        <div class="feature-box">
+                            <h4>📞 24/7 Travel Support</h4>
+                            <p>Dedicated travel concierge throughout your journey.</p>
+                        </div>
+                        <div class="feature-box">
+                            <h4>💰 Best Price Guarantee</h4>
+                            <p>Unmatched value with complete price transparency.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== TESTIMONIALS SECTION ========== -->
+    <section class="section testimonials-section">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-tag">💬 Traveler Reviews</span>
+                <h2 class="section-title">What Our Guests Say</h2>
+                <p class="section-desc">Real stories from travelers who explored the world with My TourBee.</p>
+            </div>
+
+            <div class="testimonial-slider reveal">
+                <div class="testimonial-track" id="testimonialTrack">
+                    <div class="testimonial-card">
+                        <div class="testimonial-stars">⭐⭐⭐⭐⭐</div>
+                        <p class="testimonial-text">"The Bali trip exceeded all expectations! The rice terraces were breathtaking, temple visits spiritual, and private pool villa absolute luxury. TourBee delivers premium experiences."</p>
+                        <div class="testimonial-author">
+                            <div class="author-avatar">RK</div>
+                            <div>
+                                <span class="author-name">Rajesh & Kavitha</span>
+                                <span class="author-trip">Bali Paradise Tour — Coimbatore</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-card">
+                        <div class="testimonial-stars">⭐⭐⭐⭐⭐</div>
+                        <p class="testimonial-text">"Golden Triangle package was flawlessly organized. Driver was punctual, guides knowledgeable, Taj Mahal sunset mesmerizing. Best travel agency in Coimbatore!"</p>
+                        <div class="testimonial-author">
+                            <div class="author-avatar">SK</div>
+                            <div>
+                                <span class="author-name">Suresh Kumar</span>
+                                <span class="author-trip">Golden Triangle Tour — Coimbatore</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-card">
+                        <div class="testimonial-stars">⭐⭐⭐⭐⭐</div>
+                        <p class="testimonial-text">"Our Europe tour with My TourBee was smooth and hassle-free. Eiffel Tower, Swiss Alps Titlis snow, and Venice gondola ride were dreams come true. Highly recommended!"</p>
+                        <div class="testimonial-author">
+                            <div class="author-avatar">AP</div>
+                            <div>
+                                <span class="author-name">Anitha P.</span>
+                                <span class="author-trip">Europe Highlights — Coimbatore</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-controls">
+                    <button class="testimonial-btn prev" id="prevTestimonial" aria-label="Previous">❮</button>
+                    <div class="testimonial-dots" id="testimonialDots"></div>
+                    <button class="testimonial-btn next" id="nextTestimonial" aria-label="Next">❯</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== BOOKING FORM ========== -->
+    <section id="booking" class="section booking-section">
+        <div class="container">
+            <div class="booking-wrapper reveal">
+                <div class="booking-info">
+                    <span class="section-tag">📋 Book Your Trip</span>
+                    <h2 class="section-title">Ready for Your Next Adventure?</h2>
+                    <p>Fill out the form and our travel experts will contact you within 24 hours with a personalized quote.</p>
+                    <div class="booking-features">
+                        <div class="bf-item">
+                            <span class="bf-icon">✓</span>
+                            <span>25% Advance payment for instant booking confirmation</span>
+                        </div>
+                        <div class="bf-item">
+                            <span class="bf-icon">✓</span>
+                            <span>100% Payment required 15 days prior to departure</span>
+                        </div>
+                        <div class="bf-item">
+                            <span class="bf-icon">✓</span>
+                            <span>Transparent flight & visa actual costings</span>
+                        </div>
+                        <div class="bf-item">
+                            <span class="bf-icon">✓</span>
+                            <span>Customizable itineraries & travel dates</span>
+                        </div>
+                    </div>
+                </div>
+                <form id="bookingForm" class="booking-form" novalidate>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="fullName">Full Name *</label>
+                            <input type="text" id="fullName" name="fullName" placeholder="Enter your full name" required>
+                            <span class="form-error" id="fullNameError"></span>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email Address *</label>
+                            <input type="email" id="email" name="email" placeholder="your@email.com" required>
+                            <span class="form-error" id="emailError"></span>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="phone">Phone Number *</label>
+                            <input type="tel" id="phone" name="phone" placeholder="+91 XXXXX XXXXX" required>
+                            <span class="form-error" id="phoneError"></span>
+                        </div>
+                        <div class="form-group">
+                            <label for="tourPackage">Tour Package *</label>
+                            <select id="tourPackage" name="tourPackage" required>
+                                <option value="">Select a tour package</option>
+                            </select>
+                            <span class="form-error" id="tourPackageError"></span>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="travelDate">Preferred Travel Date *</label>
+                            <input type="date" id="travelDate" name="travelDate" required>
+                            <span class="form-error" id="travelDateError"></span>
+                        </div>
+                        <div class="form-group">
+                            <label for="adults">Number of Adults *</label>
+                            <select id="adults" name="adults" required>
+                                <option value="">Select</option>
+                                <option value="1">1 Adult</option>
+                                <option value="2" selected>2 Adults</option>
+                                <option value="3">3 Adults</option>
+                                <option value="4">4 Adults</option>
+                                <option value="5+">5+ Adults</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="specialReq">Special Requirements or Custom Requests</label>
+                        <textarea id="specialReq" name="specialReq" rows="3" placeholder="Dietary needs, room preferences, flight preferences, etc."></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary" id="submitBtn" style="width:100%;">
+                        Submit Booking Inquiry
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== CONTACT SECTION ========== -->
+    <section id="contact" class="section contact-section">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-tag">📍 Get in Touch</span>
+                <h2 class="section-title">Contact Us</h2>
+                <p class="section-desc">We'd love to hear from you! Visit our office or reach out through any of the channels below.</p>
+            </div>
+
+            <div class="contact-grid reveal">
+                <div class="contact-card">
+                    <div class="contact-icon">📍</div>
+                    <h3>Our Office</h3>
+                    <p>My TourBee Tours & Travels</p>
+                    <p>RS Puram, Coimbatore, Tamil Nadu — 641002</p>
+                </div>
+                <div class="contact-card">
+                    <div class="contact-icon">📞</div>
+                    <h3>Call Us</h3>
+                    <p><a href="tel:+919442294888">+91 94422 94888</a></p>
+                    <p><a href="tel:+919487007583">+91 94870 07583</a></p>
+                </div>
+                <div class="contact-card">
+                    <div class="contact-icon">✉️</div>
+                    <h3>Email Us</h3>
+                    <p><a href="mailto:mytourbee@gmail.com">mytourbee@gmail.com</a></p>
+                </div>
+                <div class="contact-card">
+                    <div class="contact-icon">🕐</div>
+                    <h3>Working Hours</h3>
+                    <p>Mon – Sat: 9:30 AM – 7:00 PM</p>
+                    <p>Sunday: 10:00 AM – 4:00 PM</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== FOOTER ========== -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <img src="images/logo.png" alt="My TourBee Logo" class="footer-logo-img">
+                    <p>Luxury Travel Experiences since 2010. Crafting memorable domestic & international journeys.</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#domestic">Domestic Tours</a></li>
+                        <li><a href="#international">International Tours</a></li>
+                        <li><a href="#policy">Cancellation Policy</a></li>
+                        <li><a href="#booking">Book Now</a></li>
+                        <li><a href="#" onclick="openAdminModal(); return false;">⚙️ Admin Login / CMS</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Top Destinations</h4>
+                    <ul>
+                        <li><a href="#domestic">Golden Triangle</a></li>
+                        <li><a href="#domestic">Kerala Backwaters</a></li>
+                        <li><a href="#international">Thailand Explorer</a></li>
+                        <li><a href="#international">Bali Paradise</a></li>
+                        <li><a href="#international">Europe Highlights</a></li>
+                        <li><a href="#international">Dubai & Abu Dhabi</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h4>Contact Info</h4>
+                    <p>📍 RS Puram, Coimbatore, Tamil Nadu</p>
+                    <p>📞 <a href="tel:+919442294888">+91 94422 94888</a></p>
+                    <p>📞 <a href="tel:+919487007583">+91 94870 07583</a></p>
+                    <p>✉️ <a href="mailto:mytourbee@gmail.com">mytourbee@gmail.com</a></p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2026 My TourBee Tours & Travels. All Rights Reserved.</p>
+                <div class="payment-methods">
+                    <span>We Accept:</span>
+                    <span class="payment-badge">UPI</span>
+                    <span class="payment-badge">Cards</span>
+                    <span class="payment-badge">Net Banking</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ========== ITINERARY MODAL ========== -->
+    <div class="modal-overlay" id="itineraryModal">
+        <div class="modal">
+            <button class="modal-close" id="modalClose" aria-label="Close itinerary modal">&times;</button>
+            <div class="modal-content" id="modalContent">
+                <!-- Filled dynamically by JS -->
+            </div>
+        </div>
+    </div>
+
+    <!-- ========== ADMIN CMS CONTROL PANEL MODAL ========== -->
+    <div class="modal-overlay" id="adminModal">
+        <div class="modal admin-modal">
+            <button class="modal-close" onclick="closeAdminModal()">&times;</button>
+            
+            <div class="admin-header">
+                <h2>🔐 Admin Control Panel — TourBee CMS</h2>
+                <div class="admin-actions">
+                    <button class="btn btn-primary btn-sm" onclick="openAddTourForm()">➕ Add New Tour</button>
+                    <button class="btn btn-secondary btn-sm" onclick="resetAdminDefaults()">🔄 Reset Defaults</button>
+                </div>
+            </div>
+
+            <!-- LIST VIEW -->
+            <div id="adminListView">
+                <p style="font-size:0.92rem; color:var(--text-secondary); margin-bottom:16px;">
+                    Edit tour pricing costings, departure dates, routes, itineraries, inclusions & exclusions. All updates save instantly and sync directly across the website!
+                </p>
+                <div class="admin-table-wrapper">
+                    <table class="admin-table">
+                        <thead>
+                            <tr>
+                                <th>Tour Title</th>
+                                <th>Category</th>
+                                <th>Price (Costing)</th>
+                                <th>Duration</th>
+                                <th>Departure Dates</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody id="adminTourTableBody">
+                            <!-- Populated dynamically by JS -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- FORM VIEW -->
+            <div id="adminFormView" style="display:none;">
+                <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:20px;">
+                    <h3 id="adminFormTitle" style="color:var(--primary); font-family:var(--font-heading);">✏️ Edit Tour</h3>
+                    <button class="btn btn-secondary btn-sm" onclick="cancelAdminEdit()">Back to List</button>
+                </div>
+
+                <input type="hidden" id="adminEditId">
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Tour Title *</label>
+                        <input type="text" id="adminTourTitle" placeholder="e.g. Golden Triangle Tour">
+                    </div>
+                    <div class="form-group">
+                        <label>Category *</label>
+                        <select id="adminCategory">
+                            <option value="domestic">🇮🇳 Domestic Tour</option>
+                            <option value="international">🌍 International Tour</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Price (Selling Costing) *</label>
+                        <input type="text" id="adminPrice" placeholder="e.g. ₹24,999">
+                    </div>
+                    <div class="form-group">
+                        <label>Original Price (Strike-through)</label>
+                        <input type="text" id="adminOriginalPrice" placeholder="e.g. ₹29,999">
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Price Details</label>
+                        <input type="text" id="adminPriceDetail" placeholder="Per person twin sharing | Child: ₹18,999">
+                    </div>
+                    <div class="form-group">
+                        <label>Duration *</label>
+                        <input type="text" id="adminDuration" placeholder="e.g. 6 Days / 5 Nights">
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Tour Route</label>
+                        <input type="text" id="adminRoute" placeholder="e.g. Delhi → Agra → Jaipur">
+                    </div>
+                    <div class="form-group">
+                        <label>Badge Tag</label>
+                        <input type="text" id="adminBadge" placeholder="e.g. Best Seller, Premium, Popular">
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Cover Image URL / Path</label>
+                        <input type="text" id="adminImage" placeholder="images/golden-triangle.jpg">
+                    </div>
+                    <div class="form-group">
+                        <label>Available Departure Dates</label>
+                        <input type="text" id="adminDates" placeholder="e.g. 15 Oct, 01 Nov, 15 Dec 2026">
+                    </div>
+                </div>
+
+                <div class="form-group" style="margin-bottom:16px;">
+                    <label>Overview Description</label>
+                    <textarea id="adminDesc" rows="2" placeholder="Brief summary of the tour package..."></textarea>
+                </div>
+
+                <div class="form-group" style="margin-bottom:16px;">
+                    <label>Key Highlights (comma-separated)</label>
+                    <input type="text" id="adminHighlights" placeholder="Taj Mahal, Amber Fort, Chokhi Dhani">
+                </div>
+
+                <div class="form-row" style="margin-bottom:16px;">
+                    <div class="form-group">
+                        <label>Inclusions (comma-separated)</label>
+                        <textarea id="adminInclusions" rows="3" placeholder="Hotel Stay, Daily Breakfast, AC Vehicle transfers"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label>Exclusions (comma-separated)</label>
+                        <textarea id="adminExclusions" rows="3" placeholder="Airfare, Personal Expenses, Tips"></textarea>
+                    </div>
+                </div>
+
+                <!-- ITINERARY DAYS BUILDER -->
+                <div style="border-top:1px solid var(--border); padding-top:20px; margin-top:20px;">
+                    <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:12px;">
+                        <h4 style="color:var(--primary); font-family:var(--font-heading);">🗓️ Day-by-Day Itinerary Builder</h4>
+                        <button type="button" class="btn btn-outline btn-sm" onclick="addDayToAdminForm()">➕ Add Day</button>
+                    </div>
+                    <div id="adminDaysContainer" class="admin-days-container">
+                        <!-- Dynamic Day Rows -->
+                    </div>
+                </div>
+
+                <div style="margin-top:24px; display:flex; gap:12px; justify-content:flex-end;">
+                    <button type="button" class="btn btn-secondary" onclick="cancelAdminEdit()">Cancel</button>
+                    <button type="button" class="btn btn-primary" onclick="saveAdminTour()">💾 Save Tour Changes</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ========== SUCCESS TOAST ========== -->
+    <div class="toast" id="successToast">
+        <div class="toast-icon">✅</div>
+        <div class="toast-body">
+            <h4>Success</h4>
+            <p>Operation completed successfully.</p>
+        </div>
+    </div>
+
+    <!-- ========== FLOATING BUTTONS ========== -->
+    <button class="admin-float-btn" onclick="openAdminModal()" title="Open Admin CMS">⚙️</button>
+    <a href="https://wa.me/919442294888?text=Hi%20My%20TourBee!%20I'm%20interested%20in%20a%20tour%20package." class="whatsapp-float" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
+        <svg viewBox="0 0 24 24" width="28" height="28" fill="#fff"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+    </a>
+
+    <!-- INLINE JAVASCRIPT FOR FULL STANDALONE GITHUB COMPATIBILITY -->
+    <script>
+    /* ============================================
+       MY TOURBEE — Standalone JavaScript
+       ============================================ */
+
+    const defaultToursData = [
+        {
+            id: 'golden-triangle',
+            title: 'Golden Triangle',
+            category: 'domestic',
+            route: 'Delhi → Agra → Jaipur',
+            duration: '6 Days / 5 Nights',
+            price: '₹24,999',
+            originalPrice: '₹29,999',
+            priceDetail: 'Per person twin sharing | Child: ₹18,999',
+            badge: 'Best Seller',
+            badgeClass: 'popular',
+            rating: '4.9',
+            image: 'images/golden-triangle.jpg',
+            desc: 'Experience Delhi\'s historic monuments, Taj Mahal at Agra, and Jaipur\'s royal pink palaces.',
+            highlights: ['Taj Mahal Sunset', 'Amber Fort Jeep Ride', 'Old Delhi Rickshaw', 'Chokhi Dhani Dinner'],
+            travelDates: '15 Oct, 01 Nov, 15 Nov, 01 Dec 2026',
+            days: [
+                { day: 'Day 1 — Arrival in Delhi', desc: 'Transfer to hotel. Evening Connaught Place walk & welcome dinner.', meals: '🍽️ Dinner' },
+                { day: 'Day 2 — Delhi Sightseeing', desc: 'Tour of Red Fort, Jama Masjid, India Gate, Qutub Minar & Akshardham.', meals: '🍽️ Breakfast, Lunch' },
+                { day: 'Day 3 — Delhi to Agra (230 km)', desc: 'Drive to Agra. Visit Taj Mahal at sunset & Agra Fort.', meals: '🍽️ Breakfast, Dinner' },
+                { day: 'Day 4 — Agra to Jaipur (240 km)', desc: 'Drive to Jaipur via Fatehpur Sikri. Evening free in bazaars.', meals: '🍽️ Breakfast, Lunch' },
+                { day: 'Day 5 — Jaipur Sightseeing', desc: 'Amber Fort, City Palace, Hawa Mahal. Dinner at Chokhi Dhani.', meals: '🍽️ Breakfast, Dinner' },
+                { day: 'Day 6 — Departure', desc: 'Transfer to Jaipur Airport or drive back to Delhi.', meals: '🍽️ Breakfast' }
+            ],
+            inclusions: ['5 Nights 3-star/4-star hotel stay', 'Daily breakfast + select meals', 'AC vehicle transfers', 'Guide & Entry fees'],
+            exclusions: ['Airfare / Train tickets', 'Personal expenses & tips', 'Travel insurance']
+        },
+        {
+            id: 'kerala',
+            title: 'Kerala Backwaters & Hills',
+            category: 'domestic',
+            route: 'Kochi → Munnar → Thekkady → Alleppey → Kovalam',
+            duration: '7 Days / 6 Nights',
+            price: '₹29,999',
+            originalPrice: '₹34,999',
+            priceDetail: 'Per person twin sharing | Child: ₹21,999',
+            badge: 'Top Rated',
+            badgeClass: 'popular',
+            rating: '4.9',
+            image: 'images/kerala.jpg',
+            desc: 'God\'s Own Country — tea gardens of Munnar, wildlife in Thekkady, overnight houseboat, & Kovalam beach.',
+            highlights: ['Munnar Tea Gardens', 'Periyar Boat Safari', 'Overnight Houseboat', 'Kovalam Beach'],
+            travelDates: '10 Oct, 25 Oct, 12 Nov, 05 Dec 2026',
+            days: [
+                { day: 'Day 1 — Arrival in Kochi', desc: 'Arrive in Kochi. Fort Kochi tour & Kathakali show.', meals: '🍽️ Dinner' },
+                { day: 'Day 2 — Kochi to Munnar', desc: 'Drive to Munnar via Cheeyappara Waterfalls. Visit Tea Museum.', meals: '🍽️ Breakfast, Dinner' },
+                { day: 'Day 3 — Munnar Sightseeing', desc: 'Visit Eravikulam National Park, Mattupetty Dam, & Top Station.', meals: '🍽️ Breakfast, Lunch' },
+                { day: 'Day 4 — Munnar to Thekkady', desc: 'Drive to Thekkady. Periyar Lake boat safari & spice plantation tour.', meals: '🍽️ Breakfast, Dinner' },
+                { day: 'Day 5 — Alleppey Houseboat', desc: 'Board premium houseboat in Alleppey backwaters with all meals.', meals: '🍽️ Breakfast, Lunch, Dinner' },
+                { day: 'Day 6 — Kovalam Beach', desc: 'Relax on Kovalam Lighthouse Beach & Ayurvedic massage.', meals: '🍽️ Breakfast, Dinner' },
+                { day: 'Day 7 — Departure', desc: 'Transfer to Trivandrum Airport.', meals: '🍽️ Breakfast' }
+            ],
+            inclusions: ['6 Nights stay (Hotels + Houseboat)', 'Daily breakfast + Houseboat meals', 'Private AC vehicle'],
+            exclusions: ['Flight/Train tickets', 'Spa treatments', 'Personal expenses']
+        },
+        {
+            id: 'goa',
+            title: 'Goa Beach Holiday',
+            category: 'domestic',
+            route: 'North Goa → South Goa → Old Goa',
+            duration: '5 Days / 4 Nights',
+            price: '₹18,999',
+            originalPrice: '₹22,999',
+            priceDetail: 'Per person twin sharing | Child: ₹13,999',
+            badge: 'Popular',
+            badgeClass: 'popular',
+            rating: '4.7',
+            image: 'images/goa.jpg',
+            desc: 'Sun, sand, and soul — beach shacks, Portuguese churches, spice farms, water sports, & Goan nightlife.',
+            highlights: ['Water Sports', 'Mandovi River Cruise', 'Spice Plantation', 'Old Goa Churches'],
+            travelDates: 'Every Friday departure 2026',
+            days: [
+                { day: 'Day 1 — Arrival in Goa', desc: 'Transfer to resort in North Goa. Relax at Baga beach.', meals: '🍽️ Dinner' },
+                { day: 'Day 2 — North Goa & Water Sports', desc: 'Fort Aguada, Chapora Fort, & water sports at Baga Beach.', meals: '🍽️ Breakfast' },
+                { day: 'Day 3 — Old Goa & Mandovi Cruise', desc: 'Basilica of Bom Jesus, Spice plantation lunch, & river cruise.', meals: '🍽️ Breakfast, Lunch' },
+                { day: 'Day 4 — South Goa Beaches', desc: 'Palolem, Colva beach tour, Panaji walk, & farewell dinner.', meals: '🍽️ Breakfast, Dinner' },
+                { day: 'Day 5 — Departure', desc: 'Check-out and transfer to Goa Airport.', meals: '🍽️ Breakfast' }
+            ],
+            inclusions: ['4 Nights in beach resort', 'Daily breakfast', 'Water sports package', 'Mandovi cruise'],
+            exclusions: ['Flight tickets', 'Alcoholic drinks', 'Personal expenses']
+        },
+        {
+            id: 'rajasthan',
+            title: 'Rajasthan Royal Heritage',
+            category: 'domestic',
+            route: 'Jaipur → Jodhpur → Jaisalmer → Udaipur',
+            duration: '8 Days / 7 Nights',
+            price: '₹34,999',
+            originalPrice: '₹39,999',
+            priceDetail: 'Per person twin sharing | Child: ₹25,999',
+            badge: 'Premium',
+            badgeClass: 'premium',
+            rating: '4.9',
+            image: 'images/rajasthan.jpg',
+            desc: 'Live like royalty — magnificent forts, opulent palaces, Thar desert camp night, & romantic Udaipur.',
+            highlights: ['Thar Desert Camp', 'Mehrangarh Fort', 'Udaipur Lake Boat Ride', 'Amber Fort'],
+            travelDates: '12 Oct, 01 Nov, 20 Nov, 10 Dec 2026',
+            days: [
+                { day: 'Day 1 — Arrival in Jaipur', desc: 'Check into heritage hotel & welcome dinner.', meals: '🍽️ Dinner' },
+                { day: 'Day 2 — Jaipur Sightseeing', desc: 'Amber Fort, City Palace, Hawa Mahal. Chokhi Dhani dinner.', meals: '🍽️ Breakfast, Dinner' },
+                { day: 'Day 3 — Jaipur to Jodhpur', desc: 'Drive to Jodhpur. Visit Mehrangarh Fort.', meals: '🍽️ Breakfast' },
+                { day: 'Day 4 — Jodhpur to Jaisalmer', desc: 'Drive to Jaisalmer. Camel safari & folk dance in desert camp.', meals: '🍽️ Breakfast, Dinner' },
+                { day: 'Day 5 — Jaisalmer Fort', desc: 'Explore Jaisalmer Fort & Patwon Ki Haveli.', meals: '🍽️ Breakfast' },
+                { day: 'Day 6 — Jodhpur to Udaipur', desc: 'En route Ranakpur Jain Temple. Arrive in Udaipur.', meals: '🍽️ Breakfast, Dinner' },
+                { day: 'Day 7 — Udaipur Sightseeing', desc: 'City Palace, Saheliyon Ki Bari, Lake Pichola boat ride.', meals: '🍽️ Breakfast' },
+                { day: 'Day 8 — Departure', desc: 'Transfer to Udaipur Airport.', meals: '🍽️ Breakfast' }
+            ],
+            inclusions: ['7 Nights heritage hotel + 1 night desert camp', 'Daily breakfast + desert dinner', 'Lake Pichola boat ride'],
+            exclusions: ['Airfare', 'Personal expenses', 'Guide tips']
+        },
+        {
+            id: 'andaman',
+            title: 'Andaman Islands',
+            category: 'domestic',
+            route: 'Port Blair → Havelock → Neil Island',
+            duration: '6 Days / 5 Nights',
+            price: '₹39,999',
+            originalPrice: '₹45,999',
+            priceDetail: 'Per person twin sharing | Child: ₹28,999',
+            badge: 'Trending',
+            badgeClass: 'trending',
+            rating: '4.8',
+            image: 'https://images.unsplash.com/photo-1587922546307-776227941871?w=600',
+            desc: 'Pristine beaches, Radhanagar Beach, scuba diving, & Cellular Jail light show in tropical paradise.',
+            highlights: ['Radhanagar Beach', 'Scuba Diving', 'Makruzz Cruise', 'Cellular Jail'],
+            travelDates: '15 Oct, 05 Nov, 20 Nov, 10 Dec 2026',
+            days: [
+                { day: 'Day 1 — Port Blair', desc: 'Transfer to resort. Visit Carbyns Cove & Cellular Jail Light Show.', meals: '🍽️ Dinner' },
+                { day: 'Day 2 — Havelock Island', desc: 'Makruzz catamaran cruise to Havelock. Visit Radhanagar Beach.', meals: '🍽️ Breakfast' },
+                { day: 'Day 3 — Elephant Beach & Scuba', desc: 'Snorkeling & scuba diving at Elephant Beach.', meals: '🍽️ Breakfast, Lunch' },
+                { day: 'Day 4 — Neil Island', desc: 'Ferry to Neil Island. Visit Laxmanpur beach sunset.', meals: '🍽️ Breakfast' },
+                { day: 'Day 5 — Port Blair Return', desc: 'Ferry back to Port Blair. Shopping for local handicrafts.', meals: '🍽️ Breakfast, Dinner' },
+                { day: 'Day 6 — Departure', desc: 'Transfer to Port Blair Airport.', meals: '🍽️ Breakfast' }
+            ],
+            inclusions: ['5 Nights in beach resorts', 'Daily breakfast', 'Makruzz cruise tickets', 'Cellular Jail show'],
+            exclusions: ['Airfare to Port Blair', 'Scuba diving charges', 'Personal tips']
+        },
+        {
+            id: 'thailand',
+            title: 'Thailand Explorer',
+            category: 'international',
+            route: 'Bangkok → Pattaya → Phuket',
+            duration: '7 Days / 6 Nights',
+            price: '₹49,999',
+            originalPrice: '₹58,999',
+            priceDetail: 'Per person twin sharing | Child: ₹35,999',
+            badge: 'Best Seller',
+            badgeClass: 'popular',
+            rating: '4.9',
+            image: 'images/thailand.jpg',
+            desc: 'Land of Smiles — golden temples in Bangkok, Coral Island in Pattaya, & Phi Phi Islands in Phuket.',
+            highlights: ['Phi Phi Islands', 'Coral Island Speedboat', 'Grand Palace', 'Alcazar Show'],
+            travelDates: 'Weekly Wednesday & Saturday departures 2026',
+            days: [
+                { day: 'Day 1 — Bangkok to Pattaya', desc: 'Transfer to Pattaya resort. Evening Alcazar Cabaret Show.', meals: '🍽️ Dinner' },
+                { day: 'Day 2 — Coral Island Tour', desc: 'Speedboat to Coral Island with seafood lunch & water sports.', meals: '🍽️ Breakfast, Lunch' },
+                { day: 'Day 3 — Pattaya to Bangkok', desc: 'Drive to Bangkok. Visit Wat Traimit & Wat Pho temples.', meals: '🍽️ Breakfast' },
+                { day: 'Day 4 — Bangkok to Phuket', desc: 'Flight to Phuket. Explore Patong Walking Street.', meals: '🍽️ Breakfast' },
+                { day: 'Day 5 — Phi Phi Islands Tour', desc: 'Speedboat tour to Phi Phi Don, Maya Bay, & Pileh Lagoon.', meals: '🍽️ Breakfast, Lunch' },
+                { day: 'Day 6 — Phuket City Tour', desc: 'Big Buddha, Chalong Temple, Promthep Cape sunset.', meals: '🍽️ Breakfast, Dinner' },
+                { day: 'Day 7 — Departure', desc: 'Transfer to Phuket Airport.', meals: '🍽️ Breakfast' }
+            ],
+            inclusions: ['6 Nights 4-star hotel stay', 'Daily breakfast + 2 lunch buffets', 'Speedboat island transfers'],
+            exclusions: ['International & domestic airfare', 'Visa fee', 'Personal expenses']
+        },
+        {
+            id: 'bali',
+            title: 'Bali Paradise',
+            category: 'international',
+            route: 'Seminyak → Ubud → Kintamani → Nusa Dua',
+            duration: '6 Days / 5 Nights',
+            price: '₹54,999',
+            originalPrice: '₹62,999',
+            priceDetail: 'Per person twin sharing | Child: ₹39,999',
+            badge: 'Trending',
+            badgeClass: 'trending',
+            rating: '4.8',
+            image: 'images/bali.jpg',
+            desc: 'Island of the Gods — private pool villa stay, Tegalalang rice terraces, Tanah Lot sunset, & Nusa Penida.',
+            highlights: ['Private Villa with Pool', 'Tanah Lot Sunset', 'Tegalalang Rice Terrace', 'Nusa Penida Tour'],
+            travelDates: '08 Oct, 22 Oct, 10 Nov, 01 Dec 2026',
+            days: [
+                { day: 'Day 1 — Arrival in Bali', desc: 'Garland welcome at Denpasar Airport. Transfer to Seminyak pool villa.', meals: '🍽️ Dinner' },
+                { day: 'Day 2 — Ubud & Volcano', desc: 'Tegalalang Rice Terraces, Bali Swing, & Kintamani volcano view.', meals: '🍽️ Breakfast, Lunch' },
+                { day: 'Day 3 — Nusa Penida Island', desc: 'Speedboat to Nusa Penida: Kelingking T-Rex Beach & Angel Billabong.', meals: '🍽️ Breakfast, Lunch' },
+                { day: 'Day 4 — Tanah Lot Sunset', desc: 'Uluwatu Kecak Fire Dance & Tanah Lot sea temple sunset.', meals: '🍽️ Breakfast, Dinner' },
+                { day: 'Day 5 — Nusa Dua Water Sports', desc: 'Parasailing & Jet ski at Nusa Dua. Jimbaran seafood dinner.', meals: '🍽️ Breakfast, Dinner' },
+                { day: 'Day 6 — Departure', desc: 'Transfer to Bali Airport.', meals: '🍽️ Breakfast' }
+            ],
+            inclusions: ['5 Nights stay (Resort + Private Pool Villa)', 'Daily breakfast + Jimbaran dinner', 'Nusa Penida trip'],
+            exclusions: ['International Airfare', 'Personal expenses', 'Tourism tax']
+        },
+        {
+            id: 'europe',
+            title: 'Europe Highlights',
+            category: 'international',
+            route: 'Paris → Zurich → Interlaken → Rome → Vatican',
+            duration: '10 Days / 9 Nights',
+            price: '₹1,49,999',
+            originalPrice: '₹1,69,999',
+            priceDetail: 'Per person twin sharing | Child: ₹1,15,999',
+            badge: 'Premium',
+            badgeClass: 'premium',
+            rating: '5.0',
+            image: 'images/europe.jpg',
+            desc: 'The grand European odyssey — Eiffel Tower 2nd floor, Seine cruise, Swiss Mt. Titlis cable car, & Colosseum.',
+            highlights: ['Eiffel Tower 2nd Floor', 'Mt. Titlis Cable Car', 'Venice Gondola Ride', 'Rome Colosseum'],
+            travelDates: '15 Oct, 10 Nov, 01 Dec 2026',
+            days: [
+                { day: 'Day 1 — Arrival in Paris', desc: 'Arrive in Paris. Seine River illumination cruise.', meals: '🍽️ Dinner' },
+                { day: 'Day 2 — Paris & Eiffel Tower', desc: 'Champs-Élysées, Arc de Triomphe, & Eiffel Tower 2nd floor entry.', meals: '🍽️ Breakfast' },
+                { day: 'Day 3 — Paris to Zurich', desc: 'High-speed TGV train to Zurich, Switzerland.', meals: '🍽️ Breakfast, Dinner' },
+                { day: 'Day 4 — Mt. Titlis & Lucerne', desc: 'Rotair revolving cable car up Mt. Titlis snow summit.', meals: '🍽️ Breakfast' },
+                { day: 'Day 5 — Interlaken', desc: 'Full day in Interlaken between Alpine lakes.', meals: '🍽️ Breakfast, Dinner' },
+                { day: 'Day 6 — Zurich to Venice', desc: 'Drive through Swiss Alps to Venice. Gondola ride in Grand Canal.', meals: '🍽️ Breakfast' },
+                { day: 'Day 7 — Venice to Florence', desc: 'St. Mark\'s Square. Drive to Florence Duomo view.', meals: '🍽️ Breakfast, Dinner' },
+                { day: 'Day 8 — Florence to Rome', desc: 'Visit Colosseum, Trevi Fountain, & Spanish Steps.', meals: '🍽️ Breakfast' },
+                { day: 'Day 9 — Vatican City', desc: 'Guided tour of St. Peter\'s Basilica & Sistine Chapel.', meals: '🍽️ Breakfast, Dinner' },
+                { day: 'Day 10 — Departure', desc: 'Transfer to Rome Fiumicino Airport.', meals: '🍽️ Breakfast' }
+            ],
+            inclusions: ['9 Nights 4-star hotels across France, Switzerland & Italy', 'Eiffel Tower & Mt. Titlis tickets', 'Venice gondola ride'],
+            exclusions: ['Schengen Visa & Insurance', 'International flight tickets', 'City tourist taxes']
+        },
+        {
+            id: 'dubai',
+            title: 'Dubai & Abu Dhabi',
+            category: 'international',
+            route: 'Dubai → Abu Dhabi → Desert Safari',
+            duration: '6 Days / 5 Nights',
+            price: '₹59,999',
+            originalPrice: '₹68,999',
+            priceDetail: 'Per person twin sharing | Child: ₹42,999',
+            badge: 'Hot Deal',
+            badgeClass: 'popular',
+            rating: '4.8',
+            image: 'images/dubai.jpg',
+            desc: 'Futuristic luxury — Burj Khalifa 124th floor, Desert Safari dune bashing with BBQ, & Grand Mosque Abu Dhabi.',
+            highlights: ['Burj Khalifa 124th Floor', 'Desert Safari BBQ', 'Marina Dhow Cruise', 'Sheikh Zayed Mosque'],
+            travelDates: '05 Oct, 20 Oct, 10 Nov, 25 Nov 2026',
+            days: [
+                { day: 'Day 1 — Arrival in Dubai', desc: 'Transfer to 4-star hotel. Evening Marina Dhow Cruise dinner.', meals: '🍽️ Dinner' },
+                { day: 'Day 2 — Dubai & Burj Khalifa', desc: 'Dubai Frame, Palm Jumeirah, & Burj Khalifa 124th floor view.', meals: '🍽️ Breakfast' },
+                { day: 'Day 3 — Desert Safari', desc: '4x4 Dune Bashing, Camel ride, & BBQ dinner with Belly Dance show.', meals: '🍽️ Breakfast, BBQ Dinner' },
+                { day: 'Day 4 — Abu Dhabi Tour', desc: 'Visit Sheikh Zayed Grand Mosque & Yas Island photo stop.', meals: '🍽️ Breakfast, Lunch' },
+                { day: 'Day 5 — Miracle Garden', desc: 'Visit Dubai Miracle Garden & Mall of the Emirates.', meals: '🍽️ Breakfast' },
+                { day: 'Day 6 — Departure', desc: 'Transfer to Dubai Airport.', meals: '🍽️ Breakfast' }
+            ],
+            inclusions: ['5 Nights 4-star hotel stay', 'Daily breakfast + Dhow Cruise + Desert BBQ', 'Burj Khalifa ticket', 'UAE Tourist Visa'],
+            exclusions: ['International Flights', 'Tourism Dirham tax', 'Personal shopping']
+        }
+    ];
+
+    function getToursData() {
+        const saved = localStorage.getItem('mytourbee_tours_data');
+        if (saved) {
+            try { return JSON.parse(saved); } catch (e) {}
+        }
+        localStorage.setItem('mytourbee_tours_data', JSON.stringify(defaultToursData));
+        return defaultToursData;
+    }
+
+    function saveToursData(tours) {
+        localStorage.setItem('mytourbee_tours_data', JSON.stringify(tours));
+        renderTours();
+    }
+
+    function resetAdminDefaults() {
+        if (confirm('Reset all tours to default settings?')) {
+            localStorage.removeItem('mytourbee_tours_data');
+            renderTours();
+            renderAdminTourList();
+            showToast('Tours reset to original defaults!');
+        }
+    }
+
+    function initApp() {
+        try { initNavigation(); } catch (e) {}
+        try { initParticles(); } catch (e) {}
+        try { initScrollReveal(); } catch (e) {}
+        try { initCounters(); } catch (e) {}
+        try { initTestimonials(); } catch (e) {}
+        try { renderTours(); } catch (e) {}
+        try { initBookingForm(); } catch (e) {}
+        try { initSmoothScroll(); } catch (e) {}
+    }
+
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initApp);
+    } else {
+        initApp();
+    }
+
+    function renderTours() {
+        const tours = getToursData();
+        const domGrid = document.getElementById('domesticToursGrid');
+        const intGrid = document.getElementById('internationalToursGrid');
+        const selectSelect = document.getElementById('tourPackage');
+
+        if (domGrid) domGrid.innerHTML = '';
+        if (intGrid) intGrid.innerHTML = '';
+        if (selectSelect) selectSelect.innerHTML = '<option value="">Select a Tour Package</option>';
+
+        tours.forEach(tour => {
+            const cardHTML = `
+                <div class="tour-card reveal visible" data-package="${tour.id}">
+                    <div class="tour-card-image">
+                        <img src="${tour.image}" alt="${tour.title}" loading="lazy" onerror="this.src='images/logo.png';">
+                        <div class="tour-badge ${tour.badgeClass || 'popular'}">${tour.badge || 'Featured'}</div>
+                        <div class="tour-price">${tour.price}<span>/person</span></div>
+                    </div>
+                    <div class="tour-card-body">
+                        <div class="tour-meta">
+                            <span class="tour-duration">🕐 ${tour.duration}</span>
+                            <span class="tour-rating">⭐ ${tour.rating || '4.8'}</span>
+                        </div>
+                        <h3 class="tour-name">${tour.title}</h3>
+                        <p class="tour-route">${tour.route}</p>
+                        <p class="tour-desc">${tour.desc}</p>
+                        <div class="tour-dates">📅 Departures: ${tour.travelDates || 'Available on Request'}</div>
+                        <div class="tour-highlights">
+                            ${(tour.highlights || []).map(h => `<span class="tag">${h}</span>`).join('')}
+                        </div>
+                        <div class="tour-actions">
+                            <button class="btn btn-outline" onclick="openItinerary('${tour.id}')">View Itinerary</button>
+                            <a href="#booking" class="btn btn-primary btn-sm" onclick="selectPackage('${tour.title}')">Book Now</a>
+                        </div>
+                    </div>
+                </div>
+            `;
+
+            if (tour.category === 'domestic' && domGrid) domGrid.innerHTML += cardHTML;
+            else if (tour.category === 'international' && intGrid) intGrid.innerHTML += cardHTML;
+
+            if (selectSelect) {
+                const opt = document.createElement('option');
+                opt.value = tour.title;
+                opt.textContent = `${tour.title} (${tour.duration} — ${tour.price})`;
+                selectSelect.appendChild(opt);
+            }
+        });
+    }
+
+    function openItinerary(packageId) {
+        const tours = getToursData();
+        const data = tours.find(t => t.id === packageId);
+        if (!data) return;
+
+        const modal = document.getElementById('itineraryModal');
+        const content = document.getElementById('modalContent');
+        if (!modal || !content) return;
+
+        let daysHTML = (data.days || []).map(d => `
+            <div class="itinerary-day">
+                <h4>${d.day}</h4>
+                <p>${d.desc}</p>
+                <div class="meals">${d.meals}</div>
+            </div>
+        `).join('');
+
+        let inclusionsHTML = (data.inclusions || []).map(i => `<li>${i}</li>`).join('');
+        let exclusionsHTML = (data.exclusions || []).map(e => `<li>${e}</li>`).join('');
+
+        content.innerHTML = `
+            <h2 style="font-family: var(--font-heading); color: var(--primary); font-size: 2rem; font-weight: 800; margin-bottom: 6px;">${data.title}</h2>
+            <p class="modal-route" style="color: var(--accent); font-weight: 600; margin-bottom: 16px;">📍 ${data.route} &nbsp;|&nbsp; 🕐 ${data.duration}</p>
+            
+            <div class="modal-price-bar">
+                <div>
+                    <span class="price-main">${data.price} <span style="font-size:0.9rem; font-weight:normal;">per person</span></span>
+                    ${data.originalPrice ? `<span style="text-decoration: line-through; color:#94A3B8; margin-left:10px;">${data.originalPrice}</span>` : ''}
+                </div>
+                <span class="price-detail">${data.priceDetail || ''}</span>
+            </div>
+
+            <div style="background: #F8FAFC; padding: 12px 16px; border-radius: 8px; margin-bottom: 24px; font-size: 0.9rem; border-left: 4px solid var(--accent);">
+                <strong>📅 Departure Dates:</strong> ${data.travelDates || 'Available Year Round'}
+            </div>
+
+            <h3 style="font-family: var(--font-heading); font-weight: 700; margin-bottom: 16px; color: var(--primary);">📋 Day-by-Day Itinerary</h3>
+            ${daysHTML}
+
+            <div class="incl-excl">
+                <div class="inclusions">
+                    <h4>✅ Inclusions</h4>
+                    <ul>${inclusionsHTML}</ul>
+                </div>
+                <div class="exclusions">
+                    <h4>❌ Exclusions</h4>
+                    <ul>${exclusionsHTML}</ul>
+                </div>
+            </div>
+
+            <div class="modal-policy-box">
+                <h4>📜 Payment & Cancellation Terms for ${data.title}</h4>
+                <ul>
+                    <li><strong>25% Advance Payment:</strong> Required to confirm tour package slot.</li>
+                    <li><strong>100% Full Payment:</strong> Must be completed 15 days prior to departure date.</li>
+                    <li><strong>Flight & Visa Costings:</strong> 100% actual charges required upfront.</li>
+                    <li><strong>Cancellation Policy:</strong> 0% Refund for cancellations made 7 days or less prior to departure.</li>
+                </ul>
+            </div>
+
+            <div style="margin-top: 24px; text-align: center;">
+                <a href="#booking" class="btn btn-primary" onclick="closeItineraryModal(); selectPackage('${data.title}')">
+                    Proceed to Book This Tour
+                </a>
+            </div>
+        `;
+
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+    }
+
+    function closeItineraryModal() {
+        const modal = document.getElementById('itineraryModal');
+        if (modal) modal.classList.remove('active');
+        document.body.style.overflow = '';
+    }
+
+    document.addEventListener('click', (e) => {
+        const modal = document.getElementById('itineraryModal');
+        if (modal && (e.target === modal || e.target.id === 'modalClose' || e.target.closest('#modalClose'))) {
+            closeItineraryModal();
+        }
+    });
+
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') {
+            closeItineraryModal();
+            closeAdminModal();
+        }
+    });
+
+    function selectPackage(packageName) {
+        setTimeout(() => {
+            const select = document.getElementById('tourPackage');
+            if (select) {
+                for (let option of select.options) {
+                    if (option.value === packageName) {
+                        select.value = packageName;
+                        break;
+                    }
+                }
+            }
+        }, 300);
+    }
+
+    function initNavigation() {
+        const navbar = document.getElementById('navbar');
+        const hamburger = document.getElementById('hamburger');
+        const navMenu = document.getElementById('navMenu');
+        const navLinks = document.querySelectorAll('.nav-link');
+
+        if (navbar) {
+            window.addEventListener('scroll', () => {
+                navbar.classList.toggle('scrolled', window.scrollY > 40);
+            });
+        }
+
+        if (hamburger && navMenu) {
+            hamburger.addEventListener('click', () => {
+                hamburger.classList.toggle('active');
+                navMenu.classList.toggle('active');
+                document.body.style.overflow = navMenu.classList.contains('active') ? 'hidden' : '';
+            });
+
+            navLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    hamburger.classList.remove('active');
+                    navMenu.classList.remove('active');
+                    document.body.style.overflow = '';
+                });
+            });
+        }
+    }
+
+    function initParticles() {
+        const container = document.getElementById('heroParticles');
+        if (!container) return;
+
+        for (let i = 0; i < 24; i++) {
+            const particle = document.createElement('div');
+            particle.classList.add('particle');
+            particle.style.left = `${Math.random() * 100}%`;
+            particle.style.animationDelay = `${Math.random() * 6}s`;
+            particle.style.animationDuration = `${6 + Math.random() * 6}s`;
+            particle.style.width = `${3 + Math.random() * 3}px`;
+            particle.style.height = particle.style.width;
+            container.appendChild(particle);
+        }
+    }
+
+    function initScrollReveal() {
+        const reveals = document.querySelectorAll('.reveal');
+        reveals.forEach(el => el.classList.add('visible'));
+    }
+
+    function initCounters() {
+        const counters = document.querySelectorAll('.stat-number');
+        let counted = false;
+        if (!counters.length) return;
+
+        const observer = new IntersectionObserver((entries) => {
+            if (entries[0].isIntersecting && !counted) {
+                counted = true;
+                counters.forEach(counter => {
+                    const target = parseInt(counter.dataset.target);
+                    const duration = 1800;
+                    const step = target / (duration / 16);
+                    let current = 0;
+                    const timer = setInterval(() => {
+                        current += step;
+                        if (current >= target) {
+                            counter.textContent = target.toLocaleString();
+                            clearInterval(timer);
+                        } else {
+                            counter.textContent = Math.floor(current).toLocaleString();
+                        }
+                    }, 16);
+                });
+            }
+        }, { threshold: 0.3 });
+
+        const statsSec = document.querySelector('.hero-stats');
+        if (statsSec) observer.observe(statsSec);
+    }
+
+    function initTestimonials() {
+        const track = document.getElementById('testimonialTrack');
+        const dotsContainer = document.getElementById('testimonialDots');
+        const prevBtn = document.getElementById('prevTestimonial');
+        const nextBtn = document.getElementById('nextTestimonial');
+        if (!track || !dotsContainer) return;
+
+        const cards = track.querySelectorAll('.testimonial-card');
+        let current = 0;
+        const total = cards.length;
+
+        dotsContainer.innerHTML = '';
+        for (let i = 0; i < total; i++) {
+            const dot = document.createElement('div');
+            dot.classList.add('testimonial-dot');
+            if (i === 0) dot.classList.add('active');
+            dot.addEventListener('click', () => goTo(i));
+            dotsContainer.appendChild(dot);
+        }
+
+        function goTo(index) {
+            current = index;
+            track.style.transform = `translateX(-${current * 100}%)`;
+            dotsContainer.querySelectorAll('.testimonial-dot').forEach((d, i) => {
+                d.classList.toggle('active', i === current);
+            });
+        }
+
+        if (prevBtn) prevBtn.addEventListener('click', () => goTo((current - 1 + total) % total));
+        if (nextBtn) nextBtn.addEventListener('click', () => goTo((current + 1) % total));
+
+        let autoSlide = setInterval(() => goTo((current + 1) % total), 5000);
+        track.addEventListener('mouseenter', () => clearInterval(autoSlide));
+        track.addEventListener('mouseleave', () => {
+            autoSlide = setInterval(() => goTo((current + 1) % total), 5000);
+        });
+    }
+
+    function initBookingForm() {
+        const form = document.getElementById('bookingForm');
+        if (!form) return;
+
+        const travelDate = document.getElementById('travelDate');
+        if (travelDate) {
+            const today = new Date().toISOString().split('T')[0];
+            travelDate.setAttribute('min', today);
+        }
+
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+            if (validateForm()) {
+                submitForm();
+            }
+        });
+    }
+
+    function validateForm() {
+        let valid = true;
+        const name = document.getElementById('fullName');
+        const email = document.getElementById('email');
+        const phone = document.getElementById('phone');
+        const tourPackage = document.getElementById('tourPackage');
+
+        if (name && !name.value.trim()) { showError('fullName', 'Please enter your name'); valid = false; }
+        if (email && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value.trim())) { showError('email', 'Valid email required'); valid = false; }
+        if (phone && phone.value.trim().length < 10) { showError('phone', 'Valid phone required'); valid = false; }
+        if (tourPackage && !tourPackage.value) { showError('tourPackage', 'Please select a package'); valid = false; }
+
+        return valid;
+    }
+
+    function showError(fieldId, msg) {
+        const field = document.getElementById(fieldId);
+        const err = document.getElementById(fieldId + 'Error');
+        if (field) field.classList.add('error');
+        if (err) err.textContent = msg;
+    }
+
+    function submitForm() {
+        const btn = document.getElementById('submitBtn');
+        if (btn) btn.disabled = true;
+
+        setTimeout(() => {
+            if (btn) btn.disabled = false;
+            showToast('Booking inquiry submitted! Our team will contact you shortly.');
+            const form = document.getElementById('bookingForm');
+            if (form) form.reset();
+        }, 1200);
+    }
+
+    function showToast(msg) {
+        const toast = document.getElementById('successToast');
+        if (!toast) return;
+        const body = toast.querySelector('p');
+        if (body) body.textContent = msg;
+        toast.classList.add('show');
+        setTimeout(() => toast.classList.remove('show'), 4000);
+    }
+
+    function initSmoothScroll() {
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                const href = this.getAttribute('href');
+                if (!href || href === '#') return;
+                const target = document.querySelector(href);
+                if (target) {
+                    e.preventDefault();
+                    target.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
+    }
+
+    // ADMIN FUNCTIONS
+    function openAdminModal() {
+        if (!sessionStorage.getItem('mytourbee_admin_auth')) {
+            const pass = prompt('🔐 Admin Security Gate\nEnter passcode to manage tours:', '');
+            if (pass === 'admin123' || pass === 'admin' || pass === '1234') {
+                sessionStorage.setItem('mytourbee_admin_auth', 'true');
+            } else if (pass !== null) {
+                alert('Incorrect passcode!');
+                return;
+            } else {
+                return;
+            }
+        }
+        const modal = document.getElementById('adminModal');
+        if (!modal) return;
+        renderAdminTourList();
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+    }
+
+    function closeAdminModal() {
+        const modal = document.getElementById('adminModal');
+        if (modal) modal.classList.remove('active');
+        document.body.style.overflow = '';
+    }
+
+    function renderAdminTourList() {
+        const tours = getToursData();
+        const tbody = document.getElementById('adminTourTableBody');
+        if (!tbody) return;
+
+        tbody.innerHTML = tours.map((t) => `
+            <tr>
+                <td><strong>${t.title}</strong><br><small style="color:#64748B;">ID: ${t.id}</small></td>
+                <td><span class="admin-badge ${t.category === 'domestic' ? 'dom' : 'int'}">${t.category.toUpperCase()}</span></td>
+                <td><strong style="color:var(--primary);">${t.price}</strong> ${t.originalPrice ? `<br><small style="text-decoration:line-through; color:#94A3B8;">${t.originalPrice}</small>` : ''}</td>
+                <td>${t.duration}</td>
+                <td><small>${t.travelDates || 'Available'}</small></td>
+                <td>
+                    <div class="action-btns">
+                        <button class="btn-edit" onclick="editAdminTour('${t.id}')">✏️ Edit</button>
+                        <button class="btn-delete" onclick="deleteAdminTour('${t.id}')">🗑️ Delete</button>
+                    </div>
+                </td>
+            </tr>
+        `).join('');
+    }
+
+    function openAddTourForm() {
+        document.getElementById('adminFormTitle').textContent = '➕ Add New Tour Package';
+        document.getElementById('adminEditId').value = '';
+        document.getElementById('adminTourTitle').value = '';
+        document.getElementById('adminCategory').value = 'domestic';
+        document.getElementById('adminPrice').value = '₹29,999';
+        document.getElementById('adminOriginalPrice').value = '₹34,999';
+        document.getElementById('adminPriceDetail').value = 'Per person twin sharing';
+        document.getElementById('adminDuration').value = '6 Days / 5 Nights';
+        document.getElementById('adminRoute').value = 'City A → City B → City C';
+        document.getElementById('adminBadge').value = 'Popular';
+        document.getElementById('adminImage').value = 'images/golden-triangle.jpg';
+        document.getElementById('adminDates').value = '15 Oct, 01 Nov, 15 Dec 2026';
+        document.getElementById('adminDesc').value = 'Tour description...';
+        document.getElementById('adminHighlights').value = 'Sightseeing, Transfers, Meals';
+        document.getElementById('adminInclusions').value = 'Hotel Stay, Breakfast, AC Vehicle';
+        document.getElementById('adminExclusions').value = 'Airfare, Personal Expenses';
+
+        const daysContainer = document.getElementById('adminDaysContainer');
+        daysContainer.innerHTML = '';
+        addDayToAdminForm('Day 1 — Arrival', 'Transfer to hotel and welcome dinner.', '🍽️ Dinner');
+
+        document.getElementById('adminListView').style.display = 'none';
+        document.getElementById('adminFormView').style.display = 'block';
+    }
+
+    function editAdminTour(tourId) {
+        const tours = getToursData();
+        const t = tours.find(item => item.id === tourId);
+        if (!t) return;
+
+        document.getElementById('adminFormTitle').textContent = `✏️ Edit Tour: ${t.title}`;
+        document.getElementById('adminEditId').value = t.id;
+        document.getElementById('adminTourTitle').value = t.title || '';
+        document.getElementById('adminCategory').value = t.category || 'domestic';
+        document.getElementById('adminPrice').value = t.price || '';
+        document.getElementById('adminOriginalPrice').value = t.originalPrice || '';
+        document.getElementById('adminPriceDetail').value = t.priceDetail || '';
+        document.getElementById('adminDuration').value = t.duration || '';
+        document.getElementById('adminRoute').value = t.route || '';
+        document.getElementById('adminBadge').value = t.badge || 'Popular';
+        document.getElementById('adminImage').value = t.image || '';
+        document.getElementById('adminDates').value = t.travelDates || '';
+        document.getElementById('adminDesc').value = t.desc || '';
+        document.getElementById('adminHighlights').value = (t.highlights || []).join(', ');
+        document.getElementById('adminInclusions').value = (t.inclusions || []).join(', ');
+        document.getElementById('adminExclusions').value = (t.exclusions || []).join(', ');
+
+        const daysContainer = document.getElementById('adminDaysContainer');
+        daysContainer.innerHTML = '';
+        (t.days || []).forEach(d => {
+            addDayToAdminForm(d.day, d.desc, d.meals);
+        });
+
+        if (!t.days || t.days.length === 0) {
+            addDayToAdminForm('Day 1 — Arrival', 'Arrival and transfer to hotel.', '🍽️ Dinner');
+        }
+
+        document.getElementById('adminListView').style.display = 'none';
+        document.getElementById('adminFormView').style.display = 'block';
+    }
+
+    function cancelAdminEdit() {
+        document.getElementById('adminFormView').style.display = 'none';
+        document.getElementById('adminListView').style.display = 'block';
+    }
+
+    function addDayToAdminForm(dayTitle = '', dayDesc = '', dayMeals = '🍽️ Breakfast') {
+        const daysContainer = document.getElementById('adminDaysContainer');
+        const dayRow = document.createElement('div');
+        dayRow.className = 'admin-day-row';
+        dayRow.innerHTML = `
+            <button type="button" class="btn-remove-day" onclick="this.parentElement.remove()">✕ Remove Day</button>
+            <div style="display:grid; grid-template-columns: 1fr 1fr; gap:12px; margin-bottom:8px;">
+                <div>
+                    <label style="font-size:0.8rem; font-weight:600;">Day Header Title</label>
+                    <input type="text" class="day-title-input" value="${dayTitle}" placeholder="e.g. Day 1 — Arrival in Delhi" style="width:100%; padding:6px 10px;">
+                </div>
+                <div>
+                    <label style="font-size:0.8rem; font-weight:600;">Included Meals</label>
+                    <input type="text" class="day-meals-input" value="${dayMeals}" placeholder="e.g. 🍽️ Breakfast, Dinner" style="width:100%; padding:6px 10px;">
+                </div>
+            </div>
+            <div>
+                <label style="font-size:0.8rem; font-weight:600;">Day Activity Description</label>
+                <textarea class="day-desc-input" rows="2" style="width:100%; padding:6px 10px;" placeholder="Describe itinerary activities for this day...">${dayDesc}</textarea>
+            </div>
+        `;
+        daysContainer.appendChild(dayRow);
+    }
+
+    function saveAdminTour() {
+        const editId = document.getElementById('adminEditId').value;
+        const title = document.getElementById('adminTourTitle').value.trim();
+        if (!title) { alert('Please enter a tour title.'); return; }
+
+        const tours = getToursData();
+        const id = editId || title.toLowerCase().replace(/[^a-z0-9]/g, '-');
+
+        const dayRows = document.querySelectorAll('.admin-day-row');
+        const days = [];
+        dayRows.forEach(row => {
+            const dayTitle = row.querySelector('.day-title-input').value.trim();
+            const dayMeals = row.querySelector('.day-meals-input').value.trim();
+            const dayDesc = row.querySelector('.day-desc-input').value.trim();
+            if (dayTitle) days.push({ day: dayTitle, meals: dayMeals || '🍽️ Breakfast', desc: dayDesc });
+        });
+
+        const updatedTour = {
+            id: id,
+            title: title,
+            category: document.getElementById('adminCategory').value,
+            price: document.getElementById('adminPrice').value.trim() || '₹25,000',
+            originalPrice: document.getElementById('adminOriginalPrice').value.trim(),
+            priceDetail: document.getElementById('adminPriceDetail').value.trim() || 'Per person twin sharing',
+            duration: document.getElementById('adminDuration').value.trim() || '6 Days / 5 Nights',
+            route: document.getElementById('adminRoute').value.trim() || 'Custom Route',
+            badge: document.getElementById('adminBadge').value.trim() || 'Popular',
+            badgeClass: 'popular',
+            rating: '4.9',
+            image: document.getElementById('adminImage').value.trim() || 'images/golden-triangle.jpg',
+            travelDates: document.getElementById('adminDates').value.trim() || 'Available on Request',
+            desc: document.getElementById('adminDesc').value.trim() || 'Handpicked luxury travel experience.',
+            highlights: document.getElementById('adminHighlights').value.split(',').map(s => s.trim()).filter(Boolean),
+            inclusions: document.getElementById('adminInclusions').value.split(',').map(s => s.trim()).filter(Boolean),
+            exclusions: document.getElementById('adminExclusions').value.split(',').map(s => s.trim()).filter(Boolean),
+            days: days
+        };
+
+        const index = tours.findIndex(t => t.id === id);
+        if (index >= 0) tours[index] = updatedTour;
+        else tours.push(updatedTour);
+
+        saveToursData(tours);
+        renderAdminTourList();
+        cancelAdminEdit();
+        showToast(`Tour "${title}" saved successfully!`);
+    }
+
+    function deleteAdminTour(tourId) {
+        if (confirm('Delete this tour package?')) {
+            let tours = getToursData();
+            tours = tours.filter(t => t.id !== tourId);
+            saveToursData(tours);
+            renderAdminTourList();
+            showToast('Tour package deleted.');
+        }
+    }
+    </script>
+</body>
+</html>
